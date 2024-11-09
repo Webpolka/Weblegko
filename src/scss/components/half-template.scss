@@ -1,0 +1,42 @@
+// ----------------------------------------------- Custom - Container ---------------------------------------------------------------------
+.container-fluid {    
+    padding: 0;
+    max-width: 100%;
+
+    &__left {
+        position: fixed;       
+        left: 0;
+        width: 50%;
+        height: 100vh;
+        z-index: 9999;
+    }
+
+    &__right {
+        position: relative;       
+        margin-left: 50%;
+        width: 50%;
+        padding-left: calc(var(--container-padding) * 2);
+        padding-right: calc(var(--container-padding) * 2);
+        padding-bottom: calc(var(--container-padding) * 2);
+        padding-top: 0;
+    }
+}
+
+@include tablet {
+    .container-fluid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .container-fluid__left {
+        position: relative;
+        width: 100%;
+    }
+
+    .container-fluid__right {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+

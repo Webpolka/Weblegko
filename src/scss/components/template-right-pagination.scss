@@ -1,0 +1,33 @@
+// ----------------------------------------------------- Стили пагинации ------------------------------------------------------------
+.window-right__pagination {
+    .pagination-numbers {
+        text-align: center;
+        margin-left: rem(15);
+        margin: 0;
+        margin-bottom: 3rem;
+
+        .page-numbers {
+            display: inline-block;
+            width: rem(43);
+            height: rem(43);
+            line-height: rem(43);
+            text-align: center;
+            background: var(--color-post-bg);
+            color: var(--color-main);
+            font-size: rem(15);
+            font-weight: 500;
+            margin-top: rem(20);
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+
+            &.current,
+            &:hover {
+                background: var(--color-btn);
+                color: #fff;
+            }
+        }
+    }
+}

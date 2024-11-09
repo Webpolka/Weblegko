@@ -1,0 +1,319 @@
+.comments {
+    padding-top: 2rem;
+
+    &-count {
+        display: inline-block;
+        position: relative;
+        color: var(--color-title);
+        font-size: rem(20);
+        line-height: rem(24);
+        font-weight: 700;
+        margin-bottom: rem(25);
+        text-transform: uppercase;
+        letter-spacing: rem(0.2);
+        font-family: var(--font-accent);
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: rem(10);
+            right: rem(-33);
+            width: rem(20);
+            height: rem(3);
+            background-color: var(--color-before);
+        }
+    }
+
+    // --------------------------------------------- Список комментариев --------------------------------------------------
+    &-list {
+        ul.children {
+            padding-left: rem(45) !important;
+        }
+
+        .comment {
+            position: relative;
+
+            &-body {
+                margin-bottom: rem(35);
+
+                &__author {
+                    position: relative;
+
+                    .fn a {
+                        display: inline-block;
+                        font-family: var(--font-accent);
+                        color: var(--color-title);
+                        font-size: rem(16);
+                        transition: color 0.3s ease-in-out;
+                        ;
+
+                        &:hover {
+                            color: var(--color-btn)
+                        }
+                    }
+
+                    img {
+                        display: inline-block;
+                        vertical-align: middle;
+                        border-radius: 50%;
+                        margin-right: rem(10);
+                        width: rem(65);
+                        height: rem(65);
+                    }
+
+                    cite {
+                        display: inline-block;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: rem(16);
+                        color: var(--color-main);
+                        line-height: 1.3;
+                        font-weight: 600;
+                        letter-spacing: rem(0.3);
+                        font-family: var(--font-accent);
+                    }
+                }
+
+                &__reply {
+
+                    &-link {
+                        position: absolute;
+                        top: rem(18);
+                        right: 0;
+                        background: #313030;
+                        color: var(--color-white);
+                        padding: rem(8) rem(20);
+                        border-radius: rem(16);
+                        letter-spacing: rem(0.28);
+                        font-size: rem(14);
+                        -webkit-transition: all .3s ease-in-out;
+                        -moz-transition: all .3s ease-in-out;
+                        -o-transition: all .3s ease-in-out;
+                        -ms-transition: all .3s ease-in-out;
+                        transition: all .3s ease-in-out;
+
+                        &:hover {
+                            background-color: var(--color-btn);
+                        }
+
+                    }
+                }
+
+                &__meta {
+                    a {
+                        display: inline-block;
+                        color: rgb(144, 143, 143);
+                        font-size: rem(13);
+                        font-weight: 500;
+                        line-height: 1.5;
+                        letter-spacing: rem(0.15);
+                        margin-top: rem(10);
+                    }
+                }
+
+                p {
+                    font-size: rem(16);
+                    color: var(--color-main);
+                    line-height: 1.6;
+                    margin-top: rem(8);
+                }
+            }
+
+        }
+
+    }
+
+    // ----------------------------------------- Оставить комментарий ------------------------------------------------------------
+    .comment-respond {
+        padding-top: 2rem;
+
+        .comment-reply-title {
+            display: inline-block;
+            position: relative;
+            color: var(--color-title);
+            font-size: rem(20);
+            line-height: rem(24);
+            font-weight: 700;
+            margin-bottom: rem(25);
+            text-transform: uppercase;
+            letter-spacing: rem(0.2);
+            font-family: var(--font-accent);
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: rem(10);
+                right: rem(-33);
+                width: rem(20);
+                height: rem(3);
+                background-color: var(--color-before);
+            }
+        }
+
+        .comment-form {
+            textarea {
+                font-family: inherit;
+                font-size: inherit;
+                line-height: inherit;
+
+                min-height: rem(200);
+                resize: vertical;
+                border-radius: rem(8);
+                padding: rem(12 rem(15));
+                margin-bottom: rem(30);
+                width: 100%;
+                line-height: normal;
+                border: 2px solid var(--color-before);
+                background-color: var(--color-post-bg);
+                padding: rem(12) rem(25);
+                color: var(--color-date);
+                outline: none;
+
+                &::placeholder {
+                    color: var(--color-date);
+                }
+
+            }
+
+            input[type="text"] {
+                font-family: inherit;
+                font-size: inherit;
+                line-height: inherit;
+                padding: rem(12 rem(15));
+                margin-bottom: rem(30);
+                width: 100%;
+                line-height: normal;
+                border: 2px solid var(--color-before);
+                background-color: var(--color-post-bg);
+                border-radius: rem(25);
+                padding: rem(12) rem(25);
+                color: var(--color-date);
+                outline: none;
+
+                &::placeholder {
+                    color: var(--color-date);
+                }
+            }
+
+            .comment-form-cookies-consent {
+                display: inline-flex;
+                align-items: baseline;
+            }
+
+            input[type=checkbox],
+            input[type=radio] {
+                box-sizing: border-box;
+                padding: 0;
+                margin-right: 0.3rem;
+            }
+
+            .message,
+            .name,
+            .email {
+                position: relative;
+            }
+
+            .message-error,
+            .message-success,
+            .name-error,
+            .email-error,
+            .name-success,
+            .email-success {
+                visibility: hidden;
+                overflow: hidden;
+                opacity: 0;
+                display: block;
+                position: absolute;
+                font-size: rem(14);
+                bottom: 0;
+                left: 0;
+                padding: 0.5rem 1rem;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .message-error.active,
+            .name-error.active,
+            .email-error.active {
+                color: var(--color-btn);
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .message-success.active,
+            .name-success.active,
+            .email-success.active {
+                color: green;
+                visibility: visible;
+                opacity: 1;
+            }
+            .comment-form-cookies-consent{
+                align-items: start;
+            }
+            .checkbox-custom {             
+                position: relative;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+
+                &:after {
+                    z-index: 1;
+                    cursor: pointer;
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    display: inline-block;
+                    width: 1rem;
+                    height: 1rem;
+                    background-size: 70%;
+                    background-color: var(--color-post-bg);
+                    border: 2px solid var(--color-before);
+                    border-radius: 4px;
+                    background-repeat: no-repeat;
+                    background-position: center;      
+                }
+                &:checked:after {
+                   background-color: var(--color-btn);
+                   background-image: url(../../icons/white-yes.svg);
+                }
+
+            }
+
+            label {
+                position: relative;
+                color: var(--color-date);
+                font-size: rem(14);
+                font-weight: 400;
+                margin-bottom: .5rem;
+                padding-left: 1.4rem;
+            }
+
+            .btn-default {
+                margin-top: 2rem;
+            }
+
+            &-error {
+                position: relative;
+                padding-bottom: 3rem;
+
+                strong {
+                    visibility: hidden;
+                    opacity: 0;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    font-size: rem(16);
+                    padding: 1rem 1rem 1rem 2rem;
+                    border: 1px solid #ffb900;
+                    transition: all 0.3s ease-in-out;
+                    ;
+                }
+
+                &.active strong {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

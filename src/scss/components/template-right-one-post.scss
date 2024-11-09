@@ -1,0 +1,363 @@
+  //----------------------------------------------------- Стили поста - ОДИНОЧНЫЙ --------------------------------------------------------------
+  .window-right__one-post {
+      .post-title {
+          color: var(--color-title);
+          font-size: rem(45);
+          line-height: 1.4;
+          font-weight: 700;
+          margin-bottom: rem(30);
+          letter-spacing: rem(0.28);
+          font-family: var(--font-accent);
+      }
+
+      // -------------------------------------- Стили для общего контента ОДИНОЧНОГО ПОСТА -----------------------------------------
+      .post-content {
+          p {
+              // text-align: justify;
+              font-size: rem(16);
+              color: var(--color-main);
+              line-height: 1.6;
+              margin-bottom: rem(28);
+
+              &.entry {
+                  font-family: var(--font-accent);
+                  font-size: rem(24);
+                  color: var(--color-title);
+                  line-height: 1.56;
+              }
+          }
+
+          // -------------- Стили для H2 ----------------
+          h2 {
+              color: var(--color-title);
+              font-family: var(--font-accent);
+              font-size: rem(34);
+              line-height: 1.4;
+              font-weight: 600;
+              letter-spacing: rem(0.28);
+              margin-top: rem(35);
+          }
+
+          // -------------- Стили для UL списка ----------------
+          ul {
+              list-style: none;
+              padding: 0;
+              margin-top: rem(28);
+              margin-bottom: rem(28);
+
+              li {
+                  display: block;
+                  font-size: rem(16);
+                  line-height: 1.6;
+                  padding-left: rem(40);
+                  position: relative;
+                  color: var(--color-main);
+                  margin-bottom: rem(12);
+
+                  &:before {
+                      content: '';
+                      position: absolute;
+                      left: rem(18);
+                      top: rem(9);
+                      width: rem(8);
+                      height: rem(8);
+                      background-color: var(--color-main);
+                      border-radius: 50%;
+
+                  }
+              }
+          }
+
+          // -------------- Стили для OL списка ----------------
+          ol {
+              padding: 0;
+              margin-bottom: rem(28);
+              padding-left: rem(40);
+
+              li {
+                  font-size: rem(16);
+                  list-style-type: decimal;
+                  line-height: 1.6;
+                  color: var(--color-main);
+                  margin-bottom: rem(12);
+
+                  &::marker {
+                      unicode-bidi: isolate;
+                      font-variant-numeric: tabular-nums;
+                      text-transform: none;
+                      text-indent: 0px !important;
+                      text-align: start !important;
+                      text-align-last: start !important;
+                  }
+              }
+          }
+
+          // -------------- Стили для галереи ----------------
+          .image-gallery {
+              overflow: hidden;
+              margin-bottom: rem(28);
+
+              &.__grid {
+                  margin-left: rem(-10);
+                  margin-right: rem(-10);
+
+                  .ingrid-2 {
+                      padding-left: rem(10);
+                      padding-right: rem(10);
+                  }
+
+                  .ingrid-3 {
+                      padding-left: rem(10);
+                      padding-right: rem(10);
+                  }
+
+                  .ingrid-4 {
+                      padding-left: rem(10);
+                      padding-right: rem(10);
+                  }
+              }
+
+              .ibg {
+                  min-height: rem(330);
+              }
+          }
+
+          img {
+              max-width: 100%;
+              height: auto;
+          }
+
+          // -------------- Стили для БЛОКНОТ ----------------
+          blockquote {
+              padding: 0;
+              margin-top: rem(40);
+              margin-bottom: rem(40);
+              padding-left: rem(18);
+              position: relative;
+              color: var(--color-title);
+              border-left: 0.5rem solid var(--color-before);
+              font-family: var(--font-accent);
+              font-weight: 600;
+
+              p {
+                  font-size: rem(22);
+                  line-height: 1.6;
+                  letter-spacing: rem(0.4);
+              }
+          }
+
+          // -------------------------------------------- Стилизация формы для обратной связи  ------------------------------------------------
+          &__contact-form {
+
+              .name,
+              .email,
+              .name,
+              .tema {
+                  position: relative;
+                  margin-bottom: rem(40);
+
+                  input {
+                      display: block;
+                      width: 100%;
+                      font-size: rem(18);
+                      width: 100%;
+                      line-height: normal;
+                      border: 2px solid var(--color-before);
+                      border-radius: rem(25);
+                      padding: rem(12) rem(25);
+                      color: var(--color-main);
+                      background-color: var(--color-post-bg);
+                      outline: none;
+                  }
+              }
+
+              .name-error,
+              .email-error {
+                  visibility: hidden;
+                  opacity: 0;
+                  display: block;
+                  position: absolute;
+                  font-size: rem(14);
+                  color: var(--color-btn);
+                  top: 100%;
+                  left: 0;
+                  padding: 0.5rem 1rem;
+                  transition: all 0.3s ease-in-out;
+              }
+
+              .name-error.active,
+              .email-error.active {
+                  visibility: visible;
+                  opacity: 1;
+              }
+
+              .name-succes,
+              .email-succes {
+                  visibility: hidden;
+                  opacity: 0;
+                  display: block;
+                  position: absolute;
+                  font-size: rem(14);
+                  color: green;
+                  top: 100%;
+                  left: 0;
+                  padding: 0.5rem 1rem;
+                  transition: all 0.3s ease-in-out;
+              }
+
+              .name-succes.active,
+              .email-succes.active {
+                  visibility: visible;
+                  opacity: 1;
+              }
+
+
+              .message {
+                  margin-bottom: rem(40);
+
+                  textarea {
+                      font-size: rem(18);
+                      width: 100%;
+                      line-height: normal;
+                      border: 2px solid var(--color-before);
+                      background-color: var(--color-post-bg);
+                      padding: rem(12) rem(25);
+                      color: var(--color-main);
+                      outline: none;
+                      min-height: rem(200);
+                      resize: vertical;
+                      border-radius: rem(8);
+                  }
+              }
+
+              .submit {
+                  &-error {
+                      position: relative;
+                      padding-bottom: 3rem;
+
+                      strong {
+                          visibility: hidden;
+                          opacity: 0;
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          font-size: rem(16);
+                          padding: 1rem 1rem 1rem 2rem;
+                          border: 1px solid #ffb900;
+                          transition: all 0.3s ease-in-out;
+                          ;
+                      }
+
+                      &.active strong {
+                          visibility: visible;
+                          opacity: 1;
+                      }
+                  }
+              }
+          }
+      }
+
+      // -------------- Стили для подвала ОДИНОЧНОГО ПОСТА (теги и социальные сети - поделиться !) ----------------
+
+      .post-footer {
+          .post-tags a {
+              display: inline-block;
+              color: var(--color-main);
+              background: var(--color-any-tag);
+              text-transform: capitalize;
+              font-size: rem(15);
+              line-height: 1;
+              margin: 0 rem(4) rem(4) 0;
+              padding: rem(12);
+              outline: none;
+              -webkit-transition: all .3s ease-in-out;
+              -moz-transition: all .3s ease-in-out;
+              -o-transition: all .3s ease-in-out;
+              -ms-transition: all .3s ease-in-out;
+              transition: all .3s ease-in-out;
+
+              &:hover {
+                  background: var(--color-btn);
+                  color: #fff;
+              }
+
+          }
+
+          .social-icons-menu {
+              display: inline-flex;
+              gap: rem(8);
+
+              li a {
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: rem(40);
+                  height: rem(40);
+                  background: var(--color-any-tag);
+                  border-radius: 50%;
+                  margin-right: rem(4);
+                  -webkit-transition: all .3s ease-in-out;
+                  -moz-transition: all .3s ease-in-out;
+                  -o-transition: all .3s ease-in-out;
+                  -ms-transition: all .3s ease-in-out;
+                  transition: all .3s ease-in-out;
+
+                  svg {
+                      width: 70%;
+                      height: 70%;
+                      fill: var(--color-main);
+                  }
+
+                  &:hover {
+                      background: var(--color-btn);
+
+                      svg {
+                          fill: #fff;
+                      }
+                  }
+              }
+          }
+      }
+
+      // -------------- Стили для контейнера АВТОРА ----------------
+      .author-box {
+          margin-top: 3rem;
+          margin-bottom: 3rem;
+          align-items: center;
+
+          &__image {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+
+              img {
+                  border-radius: 50%;
+                  width: 100%;
+                  height: 100%;
+                  max-width: rem(130);
+                  max-height: rem(130);
+              }
+          }
+
+          &__info .author-name {
+              font-size: rem(18);
+              color: var(--color-title);
+              line-height: 1.3;
+              font-weight: 600;
+              letter-spacing: rem(0.2);
+              margin-bottom: rem(11);
+              font-family: var(--font-accent);
+          }
+
+
+          &__info .author-desc {
+              font-size: rem(15);
+              color: var(--color-main);
+              line-height: 1.5;
+              margin-bottom: 0;
+          }
+      }
+
+
+
+  }

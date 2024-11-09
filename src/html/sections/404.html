@@ -1,0 +1,110 @@
+<main class="page">
+    <div class="container-fluid">
+
+        <!------------------------------------------ Верхняя полоса левой попловины сайта с менюшкой ----------------------------------------->
+        <div class="container-fluid__left">
+            <div class="header-line-left">
+                <div class="logo">
+                    <a href="#">
+                        <h2><span class="red">Web</span><span class="white">Legko</span></h2>
+                    </a>
+                </div>
+
+                <div id="menu-buttons" class="menu-buttons">
+                    <button data-id="1" class="menu-buttons__search">
+                        <svg class="icon icon--search">
+                            <use href="./icons/symbol/sprite.svg#search"></use>
+                        </svg>
+                    </button>
+
+                    <button data-id="2" class="menu-buttons__burger">
+                        <div class="burger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <!----------- Окно левой половины сайта для отображения содержимого ---------------->
+            <div class="window-left">
+
+                <div id="menu-tabs" class="menu-tabs">
+
+                    <!---------- Окно с формой поиска ------------>
+                    <div data-id="1" class="menu-tabs__search">
+                        <div class="search-tab-field">
+                            <input type="text" placeholder="Найти..." class="search">
+                            <button id="search-tab-submit" class="search-tab-field__submit" type="submit">
+                                <svg class="icon icon--down">
+                                    <use href="./icons/symbol/sprite.svg#down"></use>
+                                </svg>
+                            </button>
+                            <button id="search-tab-close" class="search-tab-field__close">
+                                <svg class="icon icon--xmark">
+                                    <use href="./icons/symbol/sprite.svg#xmark"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!---------- Окно с менюшкой ------------>
+                    <div data-id="2" class="menu-tabs__burger">
+                        <nav class="slide-down">
+                            <ul>
+                                <li><a href="#">На главную</a></li>
+                                <li><a href="#">Блог</a></li>
+                                <li><a href="#">Наши работы</a></li>
+                                <li><a href="#">О нас</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!---------- Окно с фотографией для страницы о нас когда кнопки не активны ------------>
+                    <div class="content-tab">
+                        <div class="slide-inner__underlay">
+                            <div class="search-bg"></div>
+                        </div>
+
+                        <div class="slide-inner__content flex-center">
+                            <div class="for-onepost-box">
+
+                                <h1 class="error404 tac">
+                                    <b>4</b>
+                                    <span>0</span>
+                                    <b>4</b>
+                                </h1>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- end menu-tabs -->
+            </div> <!-- end window-for-tabs -->
+        </div> <!-- end container-fluid__left -->
+
+        <!-- ---------------------------------------------- Правая сторона сайта -------------------------------------------------------------->
+        <div class="container-fluid__right">
+            <div class="header-line-right">
+                <button id="mode-switcher"></button>
+            </div>
+            <!-- ---------------------- Правое окно для контента -------------------------->
+            <div class="window-right">
+                <div class="window-right__one-post">
+
+                    <div class="post-content">
+                        <p>Нам очень жаль. Страница, которую вы искали, не найдена.
+                            Возможно, она была удалена, переименована или вообще не существовала.</p>
+                        <a href="#" class="btn-default">Вернуться на главную</ф>
+                    </div>
+                </div>
+
+                <!--------- Кнопка наверх ---------->
+                <div class="go-top"></div>
+            </div>
+
+        </div> <!-- end container-fluid__right -->
+
+    </div> <!-- end container-fluid -->
+</main>

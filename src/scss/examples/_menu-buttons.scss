@@ -1,0 +1,408 @@
+.header-line-left {
+    min-height: var(--header-line--height);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-search-below);
+    padding-left: 1rem;
+    overflow: hidden;
+
+    .logo h2 {
+        font-size: $LogoFontSize;
+        color: white;
+    }
+}
+
+.window-for-tabs {
+    height: var(--content-height);
+    width: 100%;
+    overflow: hidden;
+    color: white;
+}
+
+.header-line-right {
+    height: var(--header-line--height);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+// ----------------------------------------- Стилизуем кнопки левой верхней части сайта --------------------------------------------
+.menu-buttons {
+    --size: var(--header-line--height);
+    --bg-search: var(--color-search-btn);
+    --bg-burger: var(--color-btn);
+
+    display: inline-flex;
+
+    // --------------------- Стилизуем кнопку поиска ------------------------
+    &__search {
+        width: var(--size);
+        height: var(--size);
+        border: none;
+        outline: none;
+
+        svg {
+            width: 40%;
+            height: 40%;
+            fill: white;
+
+            &:hover {
+                cursor: pointer;
+                fill: var(--color-btn);
+                transition: fill 0.3s ease-in-out;
+            }
+        }
+    }
+
+    &__search {
+        background-color: var(--bg-search);
+    }
+
+    &__search.active {
+        svg {
+            fill: var(--color-btn);
+            transition: fill 0.3s ease-in-out;
+        }
+    }
+
+    // ---------------- Стилизуем кнопку БУРГЕР ---------------------------
+    &__burger {
+        width: var(--size);
+        height: var(--size);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-burger);
+            z-index: 1;
+            -webkit-transition: all .4s ease-out;
+            -moz-transition: all .4s ease-out;
+            -o-transition: all .4s ease-out;
+            -ms-transition: all .4s ease-out;
+            transition: all .4s ease-out;
+        }
+
+        .burger {
+            position: relative;
+            display: block;
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+            .bar {
+                display: block;
+                width: 28px;
+                height: 2px;
+                background-color: #fff;
+                position: relative;
+                z-index: 2;
+                -webkit-transition: all .3s ease-in-out;
+                -moz-transition: all .3s ease-in-out;
+                -o-transition: all .3s ease-in-out;
+                -ms-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+
+            .bar:first-child {
+                width: 14px;
+                margin-right: 14px;
+            }
+
+            .bar:nth-child(2) {
+                margin: 6px 0;
+            }
+
+            .bar:last-child {
+                width: 14px;
+                margin-left: 14px;
+            }
+        }
+
+        &:hover:before,
+        &.active:before {
+            top: -100%;
+            -webkit-transition: all .4s ease-out;
+            -moz-transition: all .4s ease-out;
+            -o-transition: all .4s ease-out;
+            -ms-transition: all .4s ease-out;
+            transition: all .4s ease-out;
+        }
+
+        &.active .bar {
+            background-color: var(--color-btn);
+        }
+
+        &.active .bar:first-child,
+        &.active .bar:last-child {
+            -webkit-transform: rotate(-90deg) translateY(7px);
+            -moz-transform: rotate(-90deg) translateY(7px);
+            -ms-transform: rotate(-90deg) translateY(7px);
+            -o-transform: rotate(-90deg) translateY(7px);
+            transform: rotate(-90deg) translateY(7px);
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+
+
+}
+
+// ---------------------------------------------- Стилизуем Табы для кнопок левой части сайта --------------------------------------
+
+.menu-tabs {
+    position: relative;
+    height: 100%;
+
+    &__search {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        z-index: -10;
+        transition: all 0.3s ease-in-out;
+
+        align-items: center;
+        height: inherit;
+        background-color: var(--color-search-fill);
+        padding: 2rem;
+
+        .search-tab-field {
+            display: inline-flex;
+            justify-content: space-between;
+            width: 70%;
+            margin: 0 auto;
+            border-bottom: 1px solid #656363;
+            padding: 1rem;
+
+            input {
+                color: white;
+                width: 100%;
+                background-color: var(--color-search-fill);
+                font-size: calc($LogoFontSize * 0.7);
+            }
+        }
+
+        .search-tab-field__submit,
+        .search-tab-field__close {
+            display: inline-flex;
+            align-self: center;
+
+            svg {
+                width: calc($LogoFontSize * 0.7);
+                ;
+                height: calc($LogoFontSize * 0.7);
+                ;
+                fill: #e5e2f0;
+                transition: fill 0.3s ease-in-out;
+
+                &:hover {
+                    cursor: pointer;
+                    fill: var(--color-btn);
+                    transition: fill 0.3s ease-in-out;
+                }
+            }
+        }
+
+        .search-tab-field__submit {
+            display: none;
+        }
+    }
+
+    &__burger {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        left: 100%;
+        z-index: -10;
+        transition: all 0.3s ease-in-out;
+
+        justify-content: center;
+        flex-direction: column;
+        height: inherit;
+        background-color: var(--color-black);
+        padding-left: rem(60);
+        padding-right: rem(30);
+
+        .slide-down {
+            max-height: 0px;
+        }
+
+        li>a {
+            font-family: var(--font-accent);
+            letter-spacing: -0.5rem;
+            font-size: 2.3rem;
+            line-height: 4rem;
+
+            &:hover {
+                color: var(--color-btn);
+            }
+        }
+    }
+
+    &__search.active {
+        opacity: 1;
+        z-index: 100;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &__burger.active {
+        .slide-down {
+            max-height: 100%;
+            transition: max-height 2s ease-in-out 0.3s;
+            overflow: hidden;
+
+            li>a {
+                letter-spacing: 0.25rem;
+                transition: letter-spacing 2s ease-in-out 0s;
+
+                &:hover {
+                    transition: color 0.3s ease-in-out 0s;
+                }
+            }
+        }
+
+        left: 0;
+        z-index: 100;
+        transition: all 0.3s ease-in-out;
+    }
+
+}
+
+// -------------------------------------------------- content tab ----------------------------------------------------------------------
+
+.content-tab {
+    position: relative;
+    height: var(--content-height);
+    background-color: var(--color-page-bg);
+}
+
+.slide-inner {
+    position: relative;
+    width: 100%;
+    height: var(--content-height);
+
+    //--------------------------- Слой подложка с затемнением и картинкой ----------------------------------
+    &__underlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: inherit;
+        z-index: 10;
+
+
+        &:before {
+            content: '';
+            position: absolute;
+            background: #000;
+            width: 100%;
+            height: inherit;
+            top: 0;
+            left: 0;
+            opacity: .4;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    //--------------------------------- Основной слой с содержимым окна  ----------------------------------
+    &__text {
+        display: flex;
+
+        .box {
+            align-self: center;
+        }
+
+        position: relative;
+        width: 100%;
+        height: var(--content-height);
+        z-index: 50;
+        padding: rem(40);
+        color: rgb(255, 255, 255, 0.8);
+
+        a {
+            color: rgb(255, 255, 255, 0.7);
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: rgb(255, 255, 255);
+                transition: color 0.3s ease-in-out;
+            }
+        }
+
+        .categories {
+            padding-bottom: 1rem;
+
+            a {
+                font-size: rem(20);
+                font-weight: 500;
+                line-height: rem(32);
+            }
+        }
+
+        h3 {
+            font-family: var(--font-accent);
+            font-size: 1.55rem;
+            line-height: 1.1;
+            padding-bottom: 1rem;
+        }
+
+        .post-title a {
+            font-size: em(28);
+            font-weight: 500;
+        }
+
+        .post-content p {
+            font-size: rem(18);
+            font-weight: 400;
+            line-height: rem(28);
+            padding-bottom: 1rem;
+        }
+
+        .post-info {
+            display: flex;
+            align-items: center;
+            gap: rem(15);
+
+            span:not(:first-child):nth-child(n):before {
+                content: "·";
+                margin-right: rem(10);
+                font-weight: 900;
+            }
+
+            .author-avatar img {
+                display: inline-block;
+                width: rem(36);
+                height: rem(36);
+                border-radius: 50%;
+                overflow: hidden;
+            }
+
+            .author-name a,
+            .post-date a,
+            .post-comments {
+                font-size: rem(15);
+                font-weight: 500;
+                line-height: rem(23);
+            }
+        }
+
+    }
+}

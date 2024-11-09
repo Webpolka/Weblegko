@@ -1,0 +1,54 @@
+// ------------------------------------------ JS in MODULES/rating-stars.js --------------------------------------------------------------------------
+//
+// import ratingStars from './modules/rating-stars.js';
+// ratingStars('1',
+//             'Ваша оценка',    
+//             '<svg class="icon icon--star"><use href="./icons/symbol/sprite.svg#star"></use></svg>');  
+//
+// -------------------------------------------------- HTML ------------------------------------------------------------------------
+//
+//   <div rating-id="1" class="rating-stars"></div>
+//
+// ------------------------------------------- комментарий к HTML -----------------------------------------------------------------
+//
+//  /* JavaScript создаст вот такой инпут для формы в DOM, в котором ID будет
+//  соответствовать родительскому контейнеру плюс слово Input вконце
+//        <input type="number" name="rating-input" id="rating-1" style="display: none;">
+//  */
+//
+//---------------------------------------------------- SCSS ------------------------------------------------------------------------
+.rating-stars{
+    display: inline-block;
+    padding: 1rem;
+    border: 1px solid grey;
+}
+.rating-visual {
+    --size: 2rem; 
+    --kof: 10;    // star margin = size / kof
+
+    label{
+        display: block;
+    }
+    .star-visual {
+        display: inline-flex;
+        cursor: pointer;
+        svg {
+            width: var(--size);
+            height: var(--size);
+            fill: rgb(0, 0, 0, .5);
+        }
+    }
+    .star-visual:not(:last-child){
+        padding-right: calc(var(--size) / var(--kof));
+    }
+    .star-visual.hovered {
+        svg{
+            fill: rgb(220, 100, 132) 
+        }
+    }
+    .star-visual.selected {
+        svg{
+            fill: rgb(225, 164, 10, 1) 
+        }
+    }
+}

@@ -1,0 +1,239 @@
+<main class="page">
+    <div class="container-fluid">
+
+        <!------------------------------------------ Верхняя полоса левой попловины сайта с менюшкой ----------------------------------------->
+        <div class="container-fluid__left">
+            <div class="header-line-left">
+                <div class="logo">
+                    <a href="#">
+                        <h2><span class="red">Web</span><span class="white">Legko</span></h2>
+                    </a>
+                </div>
+
+                <div id="menu-buttons" class="menu-buttons">
+                    <button data-id="1" class="menu-buttons__search">
+                        <svg class="icon icon--search">
+                            <use href="./icons/symbol/sprite.svg#search"></use>
+                        </svg>
+                    </button>
+
+                    <button data-id="2" class="menu-buttons__burger">
+                        <div class="burger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <!----------- Окно левой половины сайта для отображения содержимого ---------------->
+            <div class="window-left">
+
+                <div id="menu-tabs" class="menu-tabs">
+
+                    <!---------- Окно с формой поиска ------------>
+                    <div data-id="1" class="menu-tabs__search">
+                        <div class="search-tab-field">
+                            <input type="text" placeholder="Найти..." class="search">
+                            <button id="search-tab-submit" class="search-tab-field__submit" type="submit">
+                                <svg class="icon icon--down">
+                                    <use href="./icons/symbol/sprite.svg#down"></use>
+                                </svg>
+                            </button>
+                            <button id="search-tab-close" class="search-tab-field__close">
+                                <svg class="icon icon--xmark">
+                                    <use href="./icons/symbol/sprite.svg#xmark"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!---------- Окно с менюшкой ------------>
+                    <div data-id="2" class="menu-tabs__burger">
+                        <nav class="slide-down">
+                            <ul>
+                                <li><a href="#">На главную</a></li>
+                                <li><a href="#">Блог</a></li>
+                                <li><a href="#">Наши работы</a></li>
+                                <li><a href="#">О нас</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!---------- Окно с фотографией для страницы о нас когда кнопки не активны ------------>
+                    <div class="content-tab">
+                        <div class="slide-inner__underlay">
+                            <div class="search-bg"></div>
+                        </div>
+
+                        <div class="slide-inner__content flex-center">
+                            <div class="for-onepost-box">
+                               
+                                <div class="categories tac">
+                                    <b>Результат поиска по запросу :</b>
+                                </div>
+
+                                <h1 class="post-title tac">
+                                    <b>Ваш запрос !</b>
+                                </h1>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- end menu-tabs -->
+            </div> <!-- end window-for-tabs -->
+        </div> <!-- end container-fluid__left -->
+
+        <!-- ---------------------------------------------- Правая сторона сайта -------------------------------------------------------------->
+    <div class="container-fluid__right">
+        <div class="header-line-right">
+          <button id="mode-switcher"></button>
+        </div>
+        <!-- ---------------------- Правое окно для контента -------------------------->
+        <div class="window-right">
+          <div class="window-right__posts __grid">
+            <!-- ------------------ 1 ------------------ -->
+            <div class="ingrid-2">
+              <div class="post-thumbnail">
+                <a href="#">
+                  <div class="ibg"><img src="../../images/post-1.jpg" alt="pic-1"></div>
+                </a>
+              </div>
+  
+              <div class="post-details">
+                <ul class="post-active-categories">
+                  <li><a href="#">Wordpress</a></li>
+                  <li><a href="#">HTML</a></li>
+                </ul>
+                <h3 class="post-title">
+                  <a href="#">Создаем адаптивный сайт на Вордпресс.</a>
+                </h3>
+                <p class="post-content">Однажды немного поразмыслив мне пришла в голову идея написать собственную тему
+                  для
+                  вордпресс …</p>
+                <div class="post-info">
+                  <span class="post-date">
+                    <i class="fa fa-calendar"></i> <a href="#">Апрель 14, 2021</a>
+                  </span>
+                  <span class="post-comments">
+                    <i class="fa fa-comments-o"></i>
+                    <a href="#" class="comment-url">3</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+  
+            <!-- ------------------ 2 ------------------ -->
+            <div class="ingrid-2">
+              <div class="post-thumbnail">
+                <a href="#">
+                  <div class="ibg"><img src="../../images/post-2.jpg" alt="pic-1"></div>
+                </a>
+              </div>
+  
+              <div class="post-details">
+                <ul class="post-active-categories">
+                  <li><a href="#">JS</a></li>
+                  <li><a href="#">CSS</a></li>
+                </ul>
+                <h3 class="post-title">
+                  <a href="#">JavaScript это сила фронт-енда !</a>
+                </h3>
+                <p class="post-content">Однажды немного поразмыслив мне пришла в голову идея написать собственную тему
+                  для
+                  вордпресс …</p>
+                <div class="post-info">
+                  <span class="post-date">
+                    <i class="fa fa-calendar"></i> <a href="#">Апрель 14, 2021</a>
+                  </span>
+                  <span class="post-comments">
+                    <i class="fa fa-comments-o"></i>
+                    <a href="#" class="comment-url">3</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+  
+            <!-- ------------------ 3 ------------------ -->
+            <div class="ingrid-2">
+              <div class="post-thumbnail">
+                <a href="#">
+                  <div class="ibg"><img src="../../images/post-3.jpg" alt="pic-1"></div>
+                </a>
+              </div>
+  
+              <div class="post-details">
+                <ul class="post-active-categories">
+                  <li><a href="#">Bitrix</a></li>
+                  <li><a href="#">1C</a></li>
+                </ul>
+                <h3 class="post-title">
+                  <a href="#">Основы Bitrix и 1С за полчаса !</a>
+                </h3>
+                <p class="post-content">Однажды немного поразмыслив мне пришла в голову идея написать собственную тему
+                  для
+                  вордпресс …</p>
+                <div class="post-info">
+                  <span class="post-date">
+                    <i class="fa fa-calendar"></i> <a href="#">Апрель 14, 2021</a>
+                  </span>
+                  <span class="post-comments">
+                    <i class="fa fa-comments-o"></i>
+                    <a href="#" class="comment-url">3</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+  
+            <!-- ------------------ 4 ------------------ -->
+            <div class="ingrid-2">
+              <div class="post-thumbnail">
+                <a href="#">
+                  <div class="ibg"><img src="../../images/post-4.jpg" alt="pic-1"></div>
+                </a>
+              </div>
+  
+              <div class="post-details">
+                <ul class="post-active-categories">
+                  <li><a href="#">Wordpress</a></li>
+                  <li><a href="#">HTML</a></li>
+                </ul>
+                <h3 class="post-title">
+                  <a href="#">Учимся работать с вордпресс</a>
+                </h3>
+                <p class="post-content">Однажды немного поразмыслив мне пришла в голову идея написать собственную тему
+                  для
+                  вордпресс …</p>
+                <div class="post-info">
+                  <span class="post-date">
+                    <i class="fa fa-calendar"></i> <a href="#">Апрель 14, 2021</a>
+                  </span>
+                  <span class="post-comments">
+                    <i class="fa fa-comments-o"></i>
+                    <a href="#" class="comment-url">3</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!--------- Пагинация ---------->
+          <div class="window-right__pagination">
+            <div class="pagination-numbers">
+              <span aria-current="page" class="page-numbers current">1</span>
+              <a class="page-numbers" href="#">2</a>
+              <a class="page-numbers" href="#">3</a>
+              <a class="next page-numbers" href="#"><span class="fa fa-angle-right"></span></a>
+            </div>
+          </div>
+  
+          <!--------- Кнопка наверх ---------->
+          <div class="go-top"></div>
+        </div>
+  
+      </div> <!-- end container-fluid__right -->
+  
+    </div> <!-- end container-fluid -->
+  </main>

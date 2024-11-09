@@ -1,0 +1,139 @@
+ // ------------------------------------ Стили для вывода списка постов циклом -  МНОЖЕСТВЕННЫЕ  -----------------------------------------
+.window-right__posts {
+    .ingrid-2 {
+        margin-bottom: rem(40);
+    }
+
+    .post-thumbnail {
+        position: relative;
+        overflow: hidden;
+        min-height: calc((100vw / 4) - rem(100));
+
+        @include tablet {
+            min-height: calc((100vw / 2) - rem(100));
+        }
+
+        @include mobile {
+            min-height: calc((100vw) - rem(60));
+        }
+
+        a {
+            min-height: inherit;
+        }
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: -75%;
+            z-index: 2;
+            display: block;
+            content: '';
+            width: 50%;
+            height: 100%;
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 100%);
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 100%);
+            -webkit-transform: skewX(-25deg);
+            transform: skewX(-25deg);
+
+        }
+
+        &:hover:before {
+            left: 150%;
+            transition: left 0.3s ease-in-out;
+        }
+
+        .ibg {
+            width: 100%;
+            min-height: inherit;
+        }
+    }
+
+    .post-details {
+        padding: rem(20);
+        background-color: var(--color-post-bg);
+
+        .post-passive-categories,
+        .post-active-categories {
+            display: inline-flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+
+            a,
+            b {
+                display: inline-flex;
+                align-items: center;
+                font-weight: 500;
+                font-size: rem(16);
+                padding: rem(5) rem(15);
+                height: 100%;
+                margin-bottom: rem(10);
+                -webkit-transition: all .3s ease-in-out;
+                -moz-transition: all .3s ease-in-out;
+                -o-transition: all .3s ease-in-out;
+                -ms-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+
+            a:hover {
+                background: var(--color-btn-hover);
+            }
+        }
+
+        .post-active-categories a {
+            background: var(--color-btn);
+            color: #fff;
+        }
+
+        .post-passive-categories b {
+            background: var(--color-any-tag);
+            color: #fff;
+        }
+
+        .post-title a {
+            font-family: var(--font-accent);
+            display: block;
+            font-size: rem(21);
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: rem(15);
+            color: var(--color-title);
+            letter-spacing: .28px;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                color: var(--color-btn);
+            }
+        }
+
+        .post-content {
+            color: var(--color-main);
+            font-size: rem(14);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .post-info {
+            padding-top: 1rem;
+
+            a {
+                font-size: rem(15);
+                font-weight: 700;
+                margin-right: 1rem;
+                color: var(--color-date);
+                -webkit-transition: all .3s ease-in-out;
+                -moz-transition: all .3s ease-in-out;
+                -o-transition: all .3s ease-in-out;
+                -ms-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    color: var(--color-btn);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,140 @@
+<main class="page">
+    <div class="container-fluid">
+
+        <!------------------------------------------ Верхняя полоса левой попловины сайта с менюшкой ----------------------------------------->
+        <div class="container-fluid__left">
+            <div class="header-line-left">
+                <div class="logo">
+                    <a href="#">
+                        <h2><span class="red">Web</span><span class="white">Legko</span></h2>
+                    </a>
+                </div>
+
+                <div id="menu-buttons" class="menu-buttons">
+                    <button data-id="1" class="menu-buttons__search">
+                        <svg class="icon icon--search">
+                            <use href="./icons/symbol/sprite.svg#search"></use>
+                        </svg>
+                    </button>
+
+                    <button data-id="2" class="menu-buttons__burger">
+                        <div class="burger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <!----------- Окно левой половины сайта для отображения содержимого ---------------->
+            <div class="window-left">
+
+                <div id="menu-tabs" class="menu-tabs">
+
+                    <!---------- Окно с формой поиска ------------>
+                    <div data-id="1" class="menu-tabs__search">
+                        <div class="search-tab-field">
+                            <input type="text" placeholder="Найти..." class="search">
+                            <button id="search-tab-submit" class="search-tab-field__submit" type="submit">
+                                <svg class="icon icon--down">
+                                    <use href="./icons/symbol/sprite.svg#down"></use>
+                                </svg>
+                            </button>
+                            <button id="search-tab-close" class="search-tab-field__close">
+                                <svg class="icon icon--xmark">
+                                    <use href="./icons/symbol/sprite.svg#xmark"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!---------- Окно с менюшкой ------------>
+                    <div data-id="2" class="menu-tabs__burger">
+                        <nav class="slide-down">
+                            <ul>
+                                <li><a href="#">На главную</a></li>
+                                <li><a href="#">Блог</a></li>
+                                <li><a href="#">Наши работы</a></li>
+                                <li><a href="#">О нас</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!---------- Окно с фотографией для страницы о нас когда кнопки не активны ------------>
+                    <div class="content-tab">
+                        <div class="slide-inner__underlay">
+                            <img src="images/contacts.jpg" alt="contacts">
+                        </div>
+                    </div>
+
+                </div> <!-- end menu-tabs -->
+            </div> <!-- end window-for-tabs -->
+        </div> <!-- end container-fluid__left -->
+
+        <!-- ---------------------------------------------- Правая сторона сайта -------------------------------------------------------------->
+        <div class="container-fluid__right">
+            <div class="header-line-right">
+                <button id="mode-switcher"></button>
+            </div>
+            <!-- ---------------------- Правое окно для контента -------------------------->
+            <div class="window-right">
+
+                <div class="window-right__one-post">
+                    <div class="post-header">
+                        <h3 class="post-title">Контакты</h3>
+                    </div>
+
+                    <div class="post-content">
+                        <p class="entry">Отправьте нам сообщение и мы ответим вам в ближайшее время !</p>
+                        <p>Напишите нам и наш менеджер постраеться ответить вам как только появиться свобоная минутка,
+                            так как наши тертые калачи серьезно занимаються программированием и им некогда тратить свое
+                            драгоценное время на всяких лопездюхов,
+                            а так то мы готовы вам помочь, естесственно за бабло, штуцерок, а ты как думал !</p>
+                        <form action="">
+                            <div class="post-content__contact-form __grid">
+                                <div class="ingrid-2">
+                                    <div class="name">
+                                        <input type="text" placeholder="Ваше имя *">
+                                        <span class="name-error">Введите корректное имя !</span>    <!-- add class .active-->
+                                        <span class="name-succes">Отлично !</span>                  <!-- add class .active-->
+                                    </div>
+                                </div>
+                                <div class="ingrid-2">
+                                    <div class="email">
+                                        <input type="text" placeholder="Ваш email *">               <!-- add class .active-->
+                                        <span class="email-error">Введите корректный емейл !</span> <!-- add class .active-->
+                                        <span class="email-succes">Отлично !</span>
+                                    </div>
+                                </div>
+                                <div class="ingrid-1">
+                                    <div class="tema">
+                                        <input type="text" placeholder="Тема">
+                                    </div>
+                                    <div class="message">
+                                        <textarea name="" id="" placeholder="Сообщение"></textarea>
+                                    </div>
+                                    <div class="submit">
+                                        <button class="submit btn-default" type="submit">Отправить</button>
+                                        <div class="submit-error active">                                      <!-- add class .active-->
+                                            <strong>Вы не удосужились правильно заполнить форму и пытаетесь ее
+                                                отправить,
+                                                Сударь !</strong>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div> <!--------- Кнопка наверх ---------->
+                <div class="go-top"></div>
+            </div>
+
+        </div> <!-- end container-fluid__right -->
+
+    </div> <!-- end container-fluid -->
+</main>

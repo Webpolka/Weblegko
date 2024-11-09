@@ -1,0 +1,116 @@
+<section class="half-template">
+    <div class="container-fluid">
+        <div class="container-fluid__left">
+            <div class="top-line-left">
+                <div class="logo">
+                    <a href="#">
+                        <h2>WebLegko</h2>
+                    </a>
+                </div>
+
+                <div id="menu-buttons" class="menu-buttons">
+                    <button data-id="1" class="menu-buttons__search">
+                        <svg class="icon icon--search">
+                            <use href="./icons/symbol/sprite.svg#search"></use>
+                        </svg>
+                    </button>
+
+                    <button data-id="2" class="menu-buttons__burger">
+                        <div class="burger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="window-left">
+
+                <div id="menu-tabs" class="menu-tabs">
+
+                    <div data-id="1" class="menu-tabs__search">
+                        <div class="search-field">
+                            <input type="text" placeholder="Найти..." class="search">
+                            <button id="search-close" class="search-field__close">
+                                <svg class="icon icon--xmark">
+                                    <use href="./icons/symbol/sprite.svg#xmark"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div data-id="2" class="menu-tabs__navigation">
+                        <nav class="slide-down">
+                            <ul>
+                                <li><a href="#">На главную</a></li>
+                                <li><a href="#">Блог</a></li>
+                                <li><a href="#">Наши работы</a></li>
+                                <li><a href="#">О нас</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- ---------------------------- Содержимое пассивного окна левой части шаблона  (Слайдер Splide) ------------------------------------>
+                    <div class="content-tab">
+                        <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+
+                                    <!-- -------------------- 1 ---------------- -->
+                                    <li class="splide__slide">
+                                        <div class="slide-inner">
+                                            <div class="slide-inner__underlay">
+                                                <img src="images/post-1.jpg" alt="post-1">
+                                            </div>
+                                            <div class="slide-inner__text">
+                                                <div class="align-box">
+                                                    Slide text content
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <!-- -------------------- 2 ---------------- -->
+                                    <li class="splide__slide">
+                                        <div class="slide-inner">
+                                            <div class="slide-inner__underlay">
+                                                <img src="images/post-1.jpg" alt="post-1">
+                                            </div>
+                                            <div class="slide-inner__text">
+                                                <div class="align-box">
+                                                    Slide text content
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- -------------------- 3 ---------------- -->
+                                    <li class="splide__slide">
+                                        <div class="slide-inner">
+                                            <div class="slide-inner__underlay">
+                                                <img src="images/post-1.jpg" alt="post-1">
+                                            </div>
+                                            <div class="slide-inner__text">
+                                                <div class="align-box">
+                                                    Slide text content
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div> <!-- end splide -->
+                    </div> <!-- end content-tab -->
+
+                </div> <!-- end menu-tabs -->
+            </div> <!-- end window-left -->
+        </div> <!-- end container-fluid__left -->
+
+        <div class="container-fluid__right">
+            <div class="top-line-right">
+            </div>
+        </div> <!-- end container-fluid__right -->
+    </div> <!-- end container-fluid -->
+</section>

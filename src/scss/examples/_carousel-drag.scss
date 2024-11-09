@@ -1,0 +1,178 @@
+// ------------------------------------------JS in MODULES/carousel-drag.js ---------------------------------------------------------
+//
+// import carouselDrag from './modules/carousel-drag.js';
+// carouselDrag('#carousel-drag')
+//
+// ----------------------------------------------------- HTML ----------------------------------------------------------------------
+//
+//                ---------- есть 2 класса full и circle соответственно картинка на всю ширину или  в кружочке ----------
+//
+//        <div id="carousel-drag" class="carousel-drag">
+//           <i id="left">Left</i>
+//           <ul class="carousel">
+//             <li class="card">
+//               <div class="circle"><img src="images/post-1.jpg" alt="img" draggable="false"></div>
+//               <h2>Дядя Федя</h2>
+//               <span>Любитель покурить</span>
+//             </li>
+//             <li class="card">
+//               <div class="circle"><img src="images/post-2.jpg" alt="img" draggable="false"></div>
+//               <h2>Тётя Вася</h2>
+//               <span>Любитель порыбачить</span>
+//             </li>
+//             <li class="card">
+//               <div class="circle"><img src="images/post-3.jpg" alt="img" draggable="false"></div>
+//               <h2>Маша Семидоцкая</h2>
+//               <span>Тёлка на всю сраку</span>
+//             </li>
+//             <li class="card">
+//               <div class="circle"><img src="images/post-4.jpg" alt="img" draggable="false"></div>
+//               <h2>Ваня Иванов</h2>
+//               <span>Держит магазин</span>
+//             </li>
+//             <li class="card">
+//               <div class="circle"><img src="images/post-5.jpg" alt="img" draggable="false"></div>
+//               <h2>Курочкин Дима</h2>
+//               <span>Бывший крутой</span>
+//             </li>
+//           </ul>
+//           <i id="right">Right</i>
+//         </div>
+//
+// ------------------------------------------------ SCSS -----------------------------------------------------------------------------
+.carousel-drag {
+    width: 100%;
+    position: relative;
+
+    .carousel {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc(100% / 3);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 2rem;
+        border-radius: 8px;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &.no-transition {
+            scroll-behavior: auto;
+        }
+
+        &.dragging {
+            scroll-snap-type: none;
+            scroll-behavior: auto;
+        }
+
+        &.dragging .card {
+            cursor: grab;
+            user-select: none;
+        }
+
+        :where(.card, .img , .ibg) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            display: block;
+            min-height: 300px;
+            scroll-snap-align: start;
+            list-style: none;
+            background: #fff;
+            cursor: pointer;
+            user-select: none;
+            border-radius: 8px;
+
+            .circle {
+                background: #8B53FF;
+                height: 200px;
+                width: 200px;
+                border-radius: 50%;
+
+                img {
+                    width: 195px;
+                    height: 195px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    border: 4px solid #fff;
+                }
+            }
+
+            .full {
+                position: relative;
+                min-height: 100%;
+                min-width: 100%;
+                img {
+                    position: absolute;
+                    inset-block-start: 0;
+                    inset-inline-start: 0;
+                    object-fit: cover;
+                    block-size: 100%;
+                    inline-size: 100%;
+                }
+            }
+
+            h2 {
+                font-weight: 500;
+                font-size: 1.56rem;
+                margin: 30px 0 5px;
+            }
+
+            span {
+                color: #6A6D78;
+                font-size: 1.31rem;
+            }
+        }
+
+    }
+
+    i {
+        top: 50%;
+        z-index: 5;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        font-size: 1.25rem;
+        position: absolute;
+        text-align: center;
+        line-height: 50px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+        transform: translateY(-50%);
+        transition: transform 0.1s linear;
+        user-select: none;
+
+        &:active {
+            transform: translateY(-50%) scale(0.85);
+        }
+
+        &:first-child {
+            left: -22px;
+        }
+
+        &:last-child {
+            right: -22px;
+        }
+
+    }
+
+    @media screen and (max-width: 900px) {
+        .carousel {
+            grid-auto-columns: calc(100% / 2);
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .carousel {
+            grid-auto-columns: 100%;
+        }
+    }
+
+}

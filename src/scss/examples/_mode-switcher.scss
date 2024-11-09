@@ -1,0 +1,63 @@
+// ------------------------------------------ JS in MODULES/mode-switch.js ----------------------------------------------------
+//
+// import modeSwitcher from './modules/mode-switcher.js'
+//
+// modeSwitcher ('<svg class="icon icon--dark"><use href="./icons/symbol/sprite.svg#dark"></use></svg>','<span>Тёмная</span>',
+//                '<svg class="icon icon--light"><use href="./icons/symbol/sprite.svg#light"></use></svg>','<span>Светлая</span>');
+//
+// ----------------------------------------------- HTML --------------------------------------------------------------------
+//
+// <button id="mode-switcher"></button>
+//
+// -------------------------------------------------- root.scss ------------------------------------------------------------
+//
+// :root{
+// --font-main: "Inter", sans-serif;
+// }
+// .light-mode {	
+// 	--color-title: rgba(0, 0, 0, .9);
+// }
+// .dark-mode {
+// 	--color-title: rgba(255, 255, 255);
+// }
+//
+// ------------------------------------------------- SCCS -------------------------------------------------------------------
+#mode-switcher {
+    --font-size: 1.5rem;
+
+    display: inline-block;
+    border: none;
+    outline: none;
+
+    .inline {
+        display: inline-flex;
+        justify-content: start;
+        align-items: center;
+    }
+    svg {
+        width: var(--font-size);
+        height: var(--font-size);
+    }
+    span {
+        display: block;
+        height: var(--font-size);
+        font-size: var(--font-size);
+        font-family: var(--font-main);
+        font-weight: 400;
+        line-height: var(--font-size);
+        padding-left: calc(var(--font-size) / 3);
+    }
+
+    .dark-color--mode {
+        color: var(--color-title);
+        fill: var(--color-title);
+        stroke: var(--color-title);
+    }
+
+    .light-color--mode {
+        color: var(--color-title);
+        fill: var(--color-title);
+        stroke: var(--color-title);
+    }
+
+}

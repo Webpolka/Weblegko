@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>
+		<script>svg4everybody();</script>
+		<title>SVG &lt;symbol&gt; sprite preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+
+<!--
+
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as inline SVG, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-calendar-dims { width: 448px; height: 512px; }
+	.svg-comments-dims { width: 640px; height: 512px; }
+	.svg-dark-dims { width: 384px; height: 512px; }
+	.svg-down-dims { width: 448px; height: 512px; }
+	.svg-dzen-dims { width: 50px; height: 50px; }
+	.svg-light-dims { width: 512px; height: 512px; }
+	.svg-od-dims { width: 48px; height: 48px; }
+	.svg-search-dims { width: 512px; height: 512px; }
+	.svg-star-dims { width: 576px; height: 512px; }
+	.svg-tg-dims { width: 50px; height: 50px; }
+	.svg-up-dims { width: 384px; height: 512px; }
+	.svg-vk-dims { width: 50px; height: 50px; }
+	.svg-xmark-dims { width: 384px; height: 512px; }
+</style>
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+
+<!--
+
+Inline <symbol> SVG sprite
+====================================================================================================
+This is an inlined version of the generated SVG sprite. The single images may be <use>d everywhere
+below within this document. Please see
+
+	https://github.com/svg-sprite/svg-sprite/blob/1.5.x/docs/configuration.md#defs--symbol-mode
+
+for further details on how to create this embeddable sprite variant.
+
+-->
+
+<svg width="0" height="0" style="position:absolute">
+		<symbol viewBox="0 0 448 512" id="calendar" xmlns="http://www.w3.org/2000/svg"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40H64C28.7 64 0 92.7 0 128v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64h-40V24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40H152V24zM48 192h80v56H48v-56zm0 104h80v64H48v-64zm128 0h96v64h-96v-64zm144 0h80v64h-80v-64zm80-48h-80v-56h80v56zm0 160v40c0 8.8-7.2 16-16 16h-64v-56h80zm-128 0v56h-96v-56h96zm-144 0v56H64c-8.8 0-16-7.2-16-16v-40h80zm144-160h-96v-56h96v56z"/></symbol>
+		<symbol viewBox="0 0 640 512" id="comments" xmlns="http://www.w3.org/2000/svg"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M88.2 309.1c9.8-18.3 6.8-40.8-7.5-55.8C59.4 230.9 48 204 48 176c0-63.5 63.8-128 160-128s160 64.5 160 128-63.8 128-160 128c-13.1 0-25.8-1.3-37.8-3.6-10.4-2-21.2-.6-30.7 4.2-4.1 2.1-8.3 4.1-12.6 6-16 7.2-32.9 13.5-49.9 18 2.8-4.6 5.4-9.1 7.9-13.6 1.1-1.9 2.2-3.9 3.2-5.9zM208 352c114.9 0 208-78.8 208-176S322.9 0 208 0 0 78.8 0 176c0 41.8 17.2 80.1 45.9 110.3-.9 1.7-1.9 3.5-2.8 5.1-10.3 18.4-22.3 36.5-36.6 52.1-6.6 7-8.3 17.2-4.6 25.9C5.8 378.3 14.4 384 24 384c43 0 86.5-13.3 122.7-29.7 4.8-2.2 9.6-4.5 14.2-6.8 15.1 3 30.9 4.5 47.1 4.5zm224 128c16.2 0 31.9-1.6 47.1-4.5 4.6 2.3 9.4 4.6 14.2 6.8C529.5 498.7 573 512 616 512c9.6 0 18.2-5.7 22-14.5 3.8-8.8 2-19-4.6-25.9-14.2-15.6-26.2-33.7-36.6-52.1-.9-1.7-1.9-3.4-2.8-5.1 28.8-30.3 46-68.6 46-110.4 0-94.4-87.9-171.5-198.2-175.8 4.1 15.2 6.2 31.2 6.2 47.8v.6c87.2 6.7 144 67.5 144 127.4 0 28-11.4 54.9-32.7 77.2-14.3 15-17.3 37.6-7.5 55.8 1.1 2 2.2 4 3.2 5.9 2.5 4.5 5.2 9 7.9 13.6-17-4.5-33.9-10.7-49.9-18-4.3-1.9-8.5-3.9-12.6-6-9.5-4.8-20.3-6.2-30.7-4.2-12.1 2.4-24.8 3.6-37.8 3.6-61.7 0-110-26.5-136.8-62.3-16 5.4-32.8 9.4-50 11.8C279 439.8 350 480 432 480z"/></symbol>
+		<symbol viewBox="0 0 384 512" id="dark" xmlns="http://www.w3.org/2000/svg"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M144.7 98.7c-21 34.1-33.1 74.3-33.1 117.3 0 98 62.8 181.4 150.4 211.7-12.4 2.8-25.3 4.3-38.6 4.3C126.6 432 48 353.3 48 256c0-68.9 39.4-128.4 96.8-157.3zm62.1-66C91.1 41.2 0 137.9 0 256c0 123.7 100 224 223.5 224 47.8 0 92-15 128.4-40.6 1.9-1.3 3.7-2.7 5.5-4 4.8-3.6 9.4-7.4 13.9-11.4 2.7-2.4 5.3-4.8 7.9-7.3 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-3.7.6-7.4 1.2-11.1 1.6-5 .5-10.1.9-15.3 1h-4c-96.8-.2-175.2-78.9-175.2-176 0-54.8 24.9-103.7 64.1-136 1-.9 2.1-1.7 3.2-2.6 4-3.2 8.2-6.2 12.5-9 3.1-2 6.3-4 9.6-5.8 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-3.6-.3-7.1-.5-10.7-.6-2.7-.1-5.5-.1-8.2-.1-3.3 0-6.5.1-9.8.2-2.3.1-4.6.2-6.9.4z"/></symbol>
+		<symbol viewBox="0 0 448 512" id="down" xmlns="http://www.w3.org/2000/svg"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M246.6 470.6c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L224 402.7l137.4-137.3c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-160 160zm160-352l-160 160c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L224 210.7 361.4 73.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3z"/></symbol>
+		<symbol viewBox="0 0 50 50" id="dzen" xmlns="http://www.w3.org/2000/svg"><path d="M46.894 23.986h.011a.998.998 0 00.996-1.091C46.897 11.852 38.154 3.106 27.11 2.1a1 1 0 00-1.091 1.008c.174 14.676 2.11 20.673 20.875 20.878zm0 2.028c-18.765.205-20.7 6.202-20.874 20.878a1 1 0 001.091 1.008c11.044-1.006 19.787-9.751 20.79-20.795a.999.999 0 00-.262-.769 1.055 1.055 0 00-.745-.322zM22.823 2.105C11.814 3.14 3.099 11.884 2.1 22.897a.999.999 0 00.996 1.09h.012c18.703-.215 20.634-6.209 20.81-20.875a1.003 1.003 0 00-1.095-1.007zM3.107 26.013c-.311-.035-.555.113-.746.321a1.003 1.003 0 00-.262.769c.999 11.013 9.715 19.757 20.724 20.792a1.002 1.002 0 001.094-1.008c-.176-14.665-2.106-20.659-20.81-20.874z"/></symbol>
+		<symbol viewBox="0 0 512 512" id="light" xmlns="http://www.w3.org/2000/svg"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M375.7 19.7c-1.5-8-6.9-14.7-14.4-17.8s-16.1-2.2-22.8 2.4L256 61.1 173.5 4.2c-6.7-4.6-15.3-5.5-22.8-2.4s-12.9 9.8-14.4 17.8l-18.1 98.5-98.5 18.2c-8 1.5-14.7 6.9-17.8 14.4s-2.2 16.1 2.4 22.8L61.1 256 4.2 338.5c-4.6 6.7-5.5 15.3-2.4 22.8s9.8 13 17.8 14.4l98.5 18.1 18.1 98.5c1.5 8 6.9 14.7 14.4 17.8s16.1 2.2 22.8-2.4l82.6-56.8 82.5 56.9c6.7 4.6 15.3 5.5 22.8 2.4s12.9-9.8 14.4-17.8l18.1-98.5 98.5-18.1c8-1.5 14.7-6.9 17.8-14.4s2.2-16.1-2.4-22.8L450.9 256l56.9-82.5c4.6-6.7 5.5-15.3 2.4-22.8s-9.8-12.9-17.8-14.4l-98.5-18.1-18.2-98.5zM269.6 110l65.6-45.2 14.4 78.3c1.8 9.8 9.5 17.5 19.3 19.3l78.3 14.4-45.2 65.6c-5.7 8.2-5.7 19 0 27.2l45.2 65.6-78.3 14.4c-9.8 1.8-17.5 9.5-19.3 19.3l-14.4 78.3-65.6-45.2c-8.2-5.7-19-5.7-27.2 0l-65.6 45.2-14.4-78.3c-1.8-9.8-9.5-17.5-19.3-19.3l-78.3-14.4 45.2-65.6c5.7-8.2 5.7-19 0-27.2l-45.2-65.6 78.3-14.4c9.8-1.8 17.5-9.5 19.3-19.3l14.4-78.3 65.6 45.2c8.2 5.7 19 5.7 27.2 0zM256 368a112 112 0 100-224 112 112 0 100 224zm-64-112a64 64 0 11128 0 64 64 0 11-128 0z"/></symbol>
+		<symbol viewBox="0 0 48 48" id="od" xmlns="http://www.w3.org/2000/svg"><path d="M24 2c-6.057 0-11 4.943-11 11s4.943 11 11 11 11-4.943 11-11S30.057 2 24 2zm0 3c4.436 0 8 3.564 8 8s-3.564 8-8 8-8-3.564-8-8 3.564-8 8-8zm0 3c-1.542 0-2.888.632-3.746 1.598C19.396 10.563 19 11.792 19 13c0 1.208.396 2.437 1.254 3.402C21.112 17.368 22.458 18 24 18c1.542 0 2.888-.632 3.746-1.598C28.604 15.437 29 14.208 29 13c0-1.208-.396-2.437-1.254-3.402C26.888 8.632 25.542 8 24 8zm0 3c.792 0 1.195.243 1.504.59.308.347.496.868.496 1.41 0 .542-.188 1.063-.496 1.41-.309.347-.712.59-1.504.59s-1.195-.243-1.504-.59C22.188 14.063 22 13.542 22 13c0-.542.188-1.063.496-1.41.309-.347.712-.59 1.504-.59zm-9.012 12.55a4.519 4.519 0 00-3.845 2.17c-1.274 2.115-.58 4.905 1.533 6.178 1.285.774 2.655 1.353 4.056 1.842l-4.55 4.715a1.5 1.5 0 00-.041.045c-1.64 1.844-1.472 4.715.373 6.354 1.844 1.638 4.712 1.47 6.351-.374l-.04.045L24 39.166l5.178 5.36-.041-.046a4.505 4.505 0 006.351.375 1.5 1.5 0 000-.001c1.844-1.64 2.013-4.508.373-6.352a1.5 1.5 0 00-.04-.047l-4.555-4.713c1.402-.49 2.773-1.07 4.058-1.844 2.113-1.274 2.807-4.063 1.533-6.177-1.272-2.113-4.062-2.806-6.177-1.534-3.992 2.405-9.37 2.405-13.362 0a4.436 4.436 0 00-2.33-.636zm-.072 2.987c.287-.013.583.057.855.22 4.991 3.006 11.465 3.006 16.456 0a1.48 1.48 0 012.06.513 1.48 1.48 0 01-.512 2.058 18.89 18.89 0 01-5.609 2.242 1.5 1.5 0 00-.75 2.506l6.207 6.426a1.475 1.475 0 01-.127 2.11c-.293.26-.64.378-.996.378-.416 0-.818-.16-1.121-.502a1.5 1.5 0 00-.043-.047l-6.258-6.476a1.5 1.5 0 00-2.156 0l-6.256 6.476a1.5 1.5 0 00-.041.045 1.48 1.48 0 01-2.12.125 1.478 1.478 0 01-.122-2.117l6.199-6.42a1.5 1.5 0 00-.75-2.506 18.896 18.896 0 01-5.61-2.24 1.478 1.478 0 01-.511-2.058c.218-.363.552-.6.922-.692a1.46 1.46 0 01.283-.04z"/></symbol>
+		<symbol viewBox="0 0 512 512" id="search" xmlns="http://www.w3.org/2000/svg"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zM208 352a144 144 0 100-288 144 144 0 100 288z"/></symbol>
+		<symbol viewBox="0 0 576 512" id="star" xmlns="http://www.w3.org/2000/svg"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M316.9 18c-5.3-11-16.5-18-28.8-18s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329l-24.6 145.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329l104.2-103.1c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7l-143.7-21.2L316.9 18z"/></symbol>
+		<symbol viewBox="0 0 50 50" id="tg" xmlns="http://www.w3.org/2000/svg"><path d="M25 2C12.31 2 2 12.31 2 25s10.31 23 23 23 23-10.31 23-23S37.69 2 25 2zm0 2c11.61 0 21 9.39 21 21s-9.39 21-21 21S4 36.61 4 25 13.39 4 25 4zm9.088 10.035c-.684 0-1.453.159-2.352.483-1.396.503-17.815 7.474-19.683 8.267-1.068.454-3.057 1.299-3.057 3.313 0 1.335.782 2.29 2.322 2.84.828.295 2.795.89 3.936 1.205.484.133.998.2 1.527.2 1.035 0 2.077-.257 2.893-.712-.007.168-.003.338.017.508.123 1.05.77 2.037 1.73 2.642.629.396 5.758 3.833 6.524 4.38 1.076.768 2.266 1.175 3.438 1.175 2.24 0 2.991-2.313 3.353-3.424.525-1.613 2.491-14.73 2.713-17.043.151-1.585-.51-2.89-1.767-3.492a3.645 3.645 0 00-1.594-.342zm0 2c.275 0 .52.046.728.147.473.227.714.733.641 1.498-.242 2.523-2.203 15.329-2.621 16.613-.358 1.098-.735 2.043-1.453 2.043-.718 0-1.503-.252-2.276-.805-.773-.552-5.906-3.994-6.619-4.443-.625-.394-1.286-1.376-.355-2.326.767-.782 6.585-6.43 7.082-6.926.37-.371.197-.818-.166-.818-.125 0-.275.052-.43.18-.608.496-9.084 6.168-9.818 6.624-.486.302-1.239.52-2.02.52-.333 0-.67-.04-.994-.13-1.128-.31-3.037-.89-3.795-1.16-.729-.26-.994-.508-.994-.954 0-.634.895-1.072 1.838-1.473.996-.423 18.23-7.742 19.578-8.227.624-.226 1.195-.363 1.674-.363z"/></symbol>
+		<symbol viewBox="0 0 384 512" id="up" xmlns="http://www.w3.org/2000/svg"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.3l105.4 105.3c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></symbol>
+		<symbol viewBox="0 0 50 50" id="vk" xmlns="http://www.w3.org/2000/svg"><path d="M25 2C12.31 2 2 12.31 2 25s10.31 23 23 23 23-10.31 23-23S37.69 2 25 2zm0 2c11.61 0 21 9.39 21 21s-9.39 21-21 21S4 36.61 4 25 13.39 4 25 4zm-9.998 14l-4.035.002s-.231-.013-.51.023c-.279.037-.69.054-1.113.532l-.002.002-.002.002c-.376.43-.362.93-.315 1.205.047.274.152.479.153.48v.002c.039.095 2.968 7.274 6.662 11.13C18.445 34.102 21.23 35 23.713 35H25c.423 0 .802-.02 1.22-.236.42-.217.78-.816.78-1.282 0-.5.012-.987.076-1.257.06-.253.037-.191.06-.192a.7.7 0 01.151.053c.179.08.454.26.76.498.61.474 1.334 1.162 2.144 1.693 1.162.77 2.422.723 2.422.723h4.157l.044-.004s.638-.014 1.293-.416c.328-.2.717-.569.848-1.121.13-.552-.036-1.131-.357-1.64-.118-.187-.687-1.013-2.961-3.032-.588-.52-.988-.89-1.147-1.086-.056-.07-.06-.063-.072-.066.013-.034.145-.311.496-.768.366-.476.923-1.14 1.639-2.05.912-1.163 1.552-2.28 1.955-3.223.201-.472.344-.9.43-1.287.085-.388.153-.71.027-1.17a1.497 1.497 0 00-.602-.81 1.837 1.837 0 00-.695-.263c-.42-.078-.791-.064-1.137-.064-.724 0-3.941.025-4.207.025-.311 0-.809.13-1.039.262-.571.327-.75.776-.75.776l-.055.095-.03.108s-.733 2.37-1.487 3.591h-.002c-.886 1.44-1.547 2.01-1.838 2.172l-.035.02a1.395 1.395 0 01-.07-.326c-.043-.38-.018-.916-.018-1.434 0-1.434.108-2.329-.012-3.176-.06-.423-.211-.895-.558-1.258-.347-.362-.795-.54-1.242-.644h-.002c-.467-.107-.97-.2-2.176-.211-1.538-.014-2.54.033-3.43.43l-.01.006-.008.003a2.85 2.85 0 00-.873.608c-.122.126-.266.218-.367.621-.05.201-.055.582.172.89.228.31.547.402.735.426-.035-.004.147.036.289.106.14.07.263.17.294.21v.003c-.013-.017.123.32.159.627.035.307.029.554.029.554l-.002.06.006.061s.061.68.03 1.381a4.77 4.77 0 01-.12.92c-.003.012-.004.008-.008.018-.25-.175-.827-.784-1.623-2.098-.735-1.215-1.424-3.4-1.424-3.4l-.015-.049-.018-.047s-.128-.488-.695-.887c-.532-.374-1.037-.425-1.037-.425L15.002 18zm-.232 2c.057.02.176.064.199.074l-.024-.07.032.072.003.002v.002h.002c-.05-.035-.007 0-.002.008.028.094.639 2.197 1.592 3.773.869 1.435 1.51 2.239 2.211 2.72.7.479 1.641.43 2.12.18.639-.331.817-.877.94-1.331.124-.455.168-.916.188-1.352.038-.832-.027-1.512-.033-1.58.001-.038.01-.363-.041-.8-.051-.442-.143-.99-.535-1.542.439-.065.682-.164 1.568-.156 1.13.01 1.302.058 1.746.16.242.056.27.102.246.078-.022-.024-.002-.04.026.155.055.388-.008 1.384-.008 2.896 0 .426-.041 1.027.03 1.656.07.63.266 1.434 1.027 1.905.433.268 1.26.36 2.04-.075.78-.434 1.581-1.268 2.567-2.869.974-1.578 1.556-3.653 1.62-3.873l.017-.012c.017.001-.005.004.023.004.37 0 3.531-.025 4.207-.025.186 0 .268.01.407.016a5.336 5.336 0 01-.27.79c-.325.761-.883 1.748-1.69 2.776-.695.885-1.235 1.528-1.648 2.064-.413.537-.737.96-.873 1.573-.136.612.123 1.302.477 1.74.353.438.79.806 1.375 1.324 2.2 1.953 2.56 2.545 2.595 2.6v.002c.037.059.013 0 .028.03l-.287.085h-4.053s-.745-.024-1.297-.39l-.002-.003h-.002c-.585-.382-1.291-1.039-2.018-1.603-.363-.282-.733-.546-1.162-.74-.429-.194-.972-.332-1.545-.16-.828.247-1.288 1.036-1.435 1.662-.106.449-.09.84-.094 1.232C25.01 33 25.033 33 25 33h-1.287c-2.033 0-4.147-.62-6.428-3.004-2.965-3.096-5.61-9.084-6.008-9.994L14.77 20zm17.443.008c-.018.004.034.008.076.012-.006.003 0-.003-.008.001 0-.016-.044-.019-.068-.013z"/></symbol>
+		<symbol viewBox="0 0 384 512" id="xmark" xmlns="http://www.w3.org/2000/svg"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3l105.4 105.3c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256l105.3-105.4z"/></symbol>
+</svg>
+
+<!--
+====================================================================================================
+-->
+
+		<header>
+			<h1>SVG <code>&lt;symbol&gt;</code> sprite preview</h1>
+			<p>This preview features two methods of using the generated sprite in conjunction with inline SVG. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-html5" target="_blank" rel="noopener noreferrer">support inline SVG</a> for these techniques to work.</li>
+				<li>The embedded sprite (A) slightly differs from the generated external one. Please <a href="https://github.com/svg-sprite/svg-sprite/blob/1.5.x/docs/configuration.md#defs--symbol-mode" target="_blank" rel="noopener noreferrer">see the documentation</a> for details on how to create such an embeddable sprite.</li>
+				<li>Internet Explorer up to version 11 doesn't support external sprites for use with inline SVG. For IE 9-11, you may polyfill this functionality with <a href="https://github.com/jonathantneal/svg4everybody" target="_blank" rel="noopener noreferrer">SVG for Everybody</a>.</li>
+			</ul>
+		</header>
+		<section>
+
+<!--
+
+A) Inline SVG with embedded sprite
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) and are extracted out of the inline sprite
+embedded above. They may be styled via CSS.
+
+-->
+
+			<h3>A) Inline SVG with embedded sprite</h3>
+			<ul>
+
+				<li title="calendar">
+					<div class="icon-box">
+
+						<!-- calendar -->
+						<svg class="svg-calendar-dims">
+							<use xlink:href="#calendar"></use>
+						</svg>
+
+					</div>
+					<h2>calendar</h2>
+				</li>
+				<li title="comments">
+					<div class="icon-box">
+
+						<!-- comments -->
+						<svg class="svg-comments-dims">
+							<use xlink:href="#comments"></use>
+						</svg>
+
+					</div>
+					<h2>comments</h2>
+				</li>
+				<li title="dark">
+					<div class="icon-box">
+
+						<!-- dark -->
+						<svg class="svg-dark-dims">
+							<use xlink:href="#dark"></use>
+						</svg>
+
+					</div>
+					<h2>dark</h2>
+				</li>
+				<li title="down">
+					<div class="icon-box">
+
+						<!-- down -->
+						<svg class="svg-down-dims">
+							<use xlink:href="#down"></use>
+						</svg>
+
+					</div>
+					<h2>down</h2>
+				</li>
+				<li title="dzen">
+					<div class="icon-box">
+
+						<!-- dzen -->
+						<svg class="svg-dzen-dims">
+							<use xlink:href="#dzen"></use>
+						</svg>
+
+					</div>
+					<h2>dzen</h2>
+				</li>
+				<li title="light">
+					<div class="icon-box">
+
+						<!-- light -->
+						<svg class="svg-light-dims">
+							<use xlink:href="#light"></use>
+						</svg>
+
+					</div>
+					<h2>light</h2>
+				</li>
+				<li title="od">
+					<div class="icon-box">
+
+						<!-- od -->
+						<svg class="svg-od-dims">
+							<use xlink:href="#od"></use>
+						</svg>
+
+					</div>
+					<h2>od</h2>
+				</li>
+				<li title="search">
+					<div class="icon-box">
+
+						<!-- search -->
+						<svg class="svg-search-dims">
+							<use xlink:href="#search"></use>
+						</svg>
+
+					</div>
+					<h2>search</h2>
+				</li>
+				<li title="star">
+					<div class="icon-box">
+
+						<!-- star -->
+						<svg class="svg-star-dims">
+							<use xlink:href="#star"></use>
+						</svg>
+
+					</div>
+					<h2>star</h2>
+				</li>
+				<li title="tg">
+					<div class="icon-box">
+
+						<!-- tg -->
+						<svg class="svg-tg-dims">
+							<use xlink:href="#tg"></use>
+						</svg>
+
+					</div>
+					<h2>tg</h2>
+				</li>
+				<li title="up">
+					<div class="icon-box">
+
+						<!-- up -->
+						<svg class="svg-up-dims">
+							<use xlink:href="#up"></use>
+						</svg>
+
+					</div>
+					<h2>up</h2>
+				</li>
+				<li title="vk">
+					<div class="icon-box">
+
+						<!-- vk -->
+						<svg class="svg-vk-dims">
+							<use xlink:href="#vk"></use>
+						</svg>
+
+					</div>
+					<h2>vk</h2>
+				</li>
+				<li title="xmark">
+					<div class="icon-box">
+
+						<!-- xmark -->
+						<svg class="svg-xmark-dims">
+							<use xlink:href="#xmark"></use>
+						</svg>
+
+					</div>
+					<h2>xmark</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<section>
+
+<!--
+
+B) Inline SVG with external sprite (IE 9-11 with polyfill only)
+====================================================================================================
+These SVG images make use of an URL + fragment identifiers (IDs) and refer to the regular external
+SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
+
+-->
+
+			<h3>B) Inline SVG with external sprite (IE 9-11 with polyfill only)</h3>
+			<ul>
+
+				<li title="calendar">
+					<div class="icon-box">
+
+						<!-- calendar -->
+						<svg class="svg-calendar-dims">
+							<use xlink:href="sprite.svg#calendar"></use>
+						</svg>
+
+					</div>
+					<h2>calendar</h2>
+				</li>
+				<li title="comments">
+					<div class="icon-box">
+
+						<!-- comments -->
+						<svg class="svg-comments-dims">
+							<use xlink:href="sprite.svg#comments"></use>
+						</svg>
+
+					</div>
+					<h2>comments</h2>
+				</li>
+				<li title="dark">
+					<div class="icon-box">
+
+						<!-- dark -->
+						<svg class="svg-dark-dims">
+							<use xlink:href="sprite.svg#dark"></use>
+						</svg>
+
+					</div>
+					<h2>dark</h2>
+				</li>
+				<li title="down">
+					<div class="icon-box">
+
+						<!-- down -->
+						<svg class="svg-down-dims">
+							<use xlink:href="sprite.svg#down"></use>
+						</svg>
+
+					</div>
+					<h2>down</h2>
+				</li>
+				<li title="dzen">
+					<div class="icon-box">
+
+						<!-- dzen -->
+						<svg class="svg-dzen-dims">
+							<use xlink:href="sprite.svg#dzen"></use>
+						</svg>
+
+					</div>
+					<h2>dzen</h2>
+				</li>
+				<li title="light">
+					<div class="icon-box">
+
+						<!-- light -->
+						<svg class="svg-light-dims">
+							<use xlink:href="sprite.svg#light"></use>
+						</svg>
+
+					</div>
+					<h2>light</h2>
+				</li>
+				<li title="od">
+					<div class="icon-box">
+
+						<!-- od -->
+						<svg class="svg-od-dims">
+							<use xlink:href="sprite.svg#od"></use>
+						</svg>
+
+					</div>
+					<h2>od</h2>
+				</li>
+				<li title="search">
+					<div class="icon-box">
+
+						<!-- search -->
+						<svg class="svg-search-dims">
+							<use xlink:href="sprite.svg#search"></use>
+						</svg>
+
+					</div>
+					<h2>search</h2>
+				</li>
+				<li title="star">
+					<div class="icon-box">
+
+						<!-- star -->
+						<svg class="svg-star-dims">
+							<use xlink:href="sprite.svg#star"></use>
+						</svg>
+
+					</div>
+					<h2>star</h2>
+				</li>
+				<li title="tg">
+					<div class="icon-box">
+
+						<!-- tg -->
+						<svg class="svg-tg-dims">
+							<use xlink:href="sprite.svg#tg"></use>
+						</svg>
+
+					</div>
+					<h2>tg</h2>
+				</li>
+				<li title="up">
+					<div class="icon-box">
+
+						<!-- up -->
+						<svg class="svg-up-dims">
+							<use xlink:href="sprite.svg#up"></use>
+						</svg>
+
+					</div>
+					<h2>up</h2>
+				</li>
+				<li title="vk">
+					<div class="icon-box">
+
+						<!-- vk -->
+						<svg class="svg-vk-dims">
+							<use xlink:href="sprite.svg#vk"></use>
+						</svg>
+
+					</div>
+					<h2>vk</h2>
+				</li>
+				<li title="xmark">
+					<div class="icon-box">
+
+						<!-- xmark -->
+						<svg class="svg-xmark-dims">
+							<use xlink:href="sprite.svg#xmark"></use>
+						</svg>
+
+					</div>
+					<h2>xmark</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Sat, 09 Nov 2024 08:18:01 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>

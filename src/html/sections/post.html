@@ -1,0 +1,454 @@
+<main class="page">
+    <div class="container-fluid">
+
+        <!------------------------------------------ Верхняя полоса левой попловины сайта с менюшкой ----------------------------------------->
+        <div class="container-fluid__left">
+            <div class="header-line-left">
+                <div class="logo">
+                    <a href="#">
+                        <h2><span class="red">Web</span><span class="white">Legko</span></h2>
+                    </a>
+                </div>
+
+                <div id="menu-buttons" class="menu-buttons">
+                    <button data-id="1" class="menu-buttons__search">
+                        <svg class="icon icon--search">
+                            <use href="./icons/symbol/sprite.svg#search"></use>
+                        </svg>
+                    </button>
+
+                    <button data-id="2" class="menu-buttons__burger">
+                        <div class="burger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <!----------- Окно левой половины сайта для отображения содержимого ---------------->
+            <div class="window-left">
+
+                <div id="menu-tabs" class="menu-tabs">
+
+                    <!---------- Окно с формой поиска ------------>
+                    <div data-id="1" class="menu-tabs__search">
+                        <div class="search-tab-field">
+                            <input type="text" placeholder="Найти..." class="search">
+                            <button id="search-tab-submit" class="search-tab-field__submit" type="submit">
+                                <svg class="icon icon--down">
+                                    <use href="./icons/symbol/sprite.svg#down"></use>
+                                </svg>
+                            </button>
+                            <button id="search-tab-close" class="search-tab-field__close">
+                                <svg class="icon icon--xmark">
+                                    <use href="./icons/symbol/sprite.svg#xmark"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!---------- Окно с менюшкой ------------>
+                    <div data-id="2" class="menu-tabs__burger">
+                        <nav class="slide-down">
+                            <ul>
+                                <li><a href="#">На главную</a></li>
+                                <li><a href="#">Блог</a></li>
+                                <li><a href="#">Наши работы</a></li>
+                                <li><a href="#">О нас</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!---------- Окно с фотографией для страницы о нас когда кнопки не активны ------------>
+                    <div class="content-tab">
+                        <div class="slide-inner__underlay">
+                            <img src="images/post-8.jpg" alt="post-8">
+                        </div>
+
+                        <div class="slide-inner__content flex">
+                            <div class="for-onepost-box">
+                                <div class="categories">
+                                    <b>JavaScript</b>
+                                </div>
+
+                                <h3 class="post-title">
+                                    <b>Создаем адаптивный сайт на Вордпресс.</b>
+                                </h3>
+
+                                <div class="post-info">
+                                    <span class="author-avatar">
+                                        <img alt="User Avatar" src="images/thumb.png">
+                                    </span>
+                                    <span class="author-name">
+                                        <a href="#">Weblegko</a>
+                                    </span>
+                                    <span class="post-date">
+                                        <i class="fa fa-calendar"></i>
+                                        <a href="#">Декабрь 6, 2024</a>
+                                    </span>
+                                    <span class="post-comments">
+                                        <i class="fa fa-comments-o"></i>
+                                        <a href="#" class="comment-url">0</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- end menu-tabs -->
+            </div> <!-- end window-for-tabs -->
+        </div> <!-- end container-fluid__left -->
+
+        <!-- ---------------------------------------------- Правая сторона сайта -------------------------------------------------------------->
+        <div class="container-fluid__right">
+            <div class="header-line-right">
+                <button id="mode-switcher"></button>
+            </div>
+            <!-- ---------------------- Правое окно для контента -------------------------->
+            <div class="window-right">
+
+                <div class="window-right__one-post">
+
+                    <div class="post-content">
+                        <p class="entry">Переработан графический редактор блоков, упрощённая цветовая палитра
+                            административной консоли.</p>
+                        <p>Улучшения в написании Gutenberg, множество вариантов стилей и расширенные возможности
+                            шаблонов
+                            для тем блоков, интегрированные шаблоны, дополнительные инструменты проектирования,
+                            возможность выбора нескольких блоков из представления списка, блокировка блоков,
+                            а также различные улучшения производительности и доступности.</p>
+                        <p>Новая тема по умолчанию <strong>"Twenty Twenty-Two"</strong>, новая функция редактора сайта в
+                            админке WordPress,
+                            управление темами блоков через редактор сайта, новый блок <strong>"Навигация"</strong>,
+                            улучшенные элементы управления блоками,
+                            каталог шаблонов, просмотр списков, переработанный блок <strong>"Галерея"</strong>,
+                            поддержка дочерних тем Theme.json,
+                            блокировка на уровне блоков, несколько таблиц стилей для каждого блока.</p>
+                        <p><img src="../../images/wordpress.jpg" alt="pic-7"></p>
+                        <p>Новая стандартная тема Twenty Thirteen. Новый интерфейс для работы с ревизиями.
+                            Автосохранение и блокировка записей при совместном редактировании.
+                            Встроенная поддержка аудио и видео.</p>
+                        <h2>Новая стандартная тема Twenty Fifteen.</h2>
+                        <ul>
+                            <li>Первый релиз.</li>
+                            <li>Поддержка плагинов.</li>
+                            <li>Поддержка виджетов.</li>
+                            <li>Новая панель администратора.</li>
+                        </ul>
+                        <p>Переработанный интерфейс редактора сайта, улучшенный блок "Навигация", блок "Вставка блока",
+                            упорядоченная боковая панель настроек блока с вкладками "Настройки" и "Стили".
+                            Также доступна коллекция шаблонов заголовков и колонтитулов для тем блоков, интеграция с
+                            медиа
+                            и режим "Не отвлекаться" для написания текстов. Новая книга стилей дает полное представление
+                            о том,
+                            как выглядит каждый блок в библиотеке сайта, а пользователи теперь могут копировать и
+                            вставлять стили
+                            и добавлять пользовательские CSS для большего контроля над внешним видом своего сайта.
+                            Среди других возможностей - липкое позиционирование для групповых блоков верхнего уровня,
+                            возможность импорта избранных виджетов из тем Classic, а также локальные шрифты в
+                            стандартных темах WordPress для большей конфиденциальности с включением Google Fonts.</p>
+                        <p>Новая тема по умолчанию Twenty Seventeen. Видео-заголовки. Стартовый контент в темах.
+                            Пользовательский CSS с предпросмотром. Выбор языка админки. Превью PDF-файлов.
+                            Иконки быстрого редактирования. Заглушки в меню на лету. Кнопки в редакторе.
+                            REST API (фаза 2). Шаблоны для типов записей. Пользовательские массовые действия.
+                            Ревизии состояния кастомайзера.</p>
+
+                        <ol>
+                            <li><strong>Separated they live in Bookmarksgrove</strong> right at the coast of the
+                                Semantics, a large language ocean.</li>
+                            <li><strong>A small river named Duden</strong> flows by their place and supplies it with the
+                                necessary regelialia.</li>
+                            <li><strong>And if she hasn’t been rewritten</strong> then they are still using her.</li>
+                        </ol>
+                        <div class="image-gallery __grid">
+                            <div class="ingrid-3">
+                                <div class="ibg"><img src="../../images/picture-1.jpg" alt="6"></div>
+                            </div>
+                            <div class="ingrid-3">
+                                <div class="ibg"><img src="../../images/picture-2.jpg" alt="7"></div>
+                            </div>
+                            <div class="ingrid-3">
+                                <div class="ibg"><img src="../../images/picture-3.jpg" alt="8"></div>
+                            </div>
+                        </div>
+                        <p>Среди других возможностей - липкое позиционирование для групповых блоков верхнего уровня,
+                            возможность импорта избранных виджетов из тем Classic</p>
+                        <blockquote>
+                            <p>Улучшения в области написания текстов Gutenberg, инструменты дизайна для большей
+                                согласованности и контроля,
+                                более чистые макеты и визуализация настроек документа, управление меню, плавная
+                                типографика,
+                                улучшенные разместители блоков и предустановки интервалов.</p>
+                        </blockquote>
+                        <p>Новая тема по умолчанию Twenty Seventeen. Видео-заголовки. Стартовый контент в темах.
+                            Пользовательский CSS с предпросмотром. Выбор языка админки. Превью PDF-файлов.
+                            Иконки быстрого редактирования. Заглушки в меню на лету. Кнопки в редакторе.
+                            REST API (фаза 2). Шаблоны для типов записей. Пользовательские массовые действия.
+                            Ревизии состояния кастомайзера.</p>
+                    </div>
+
+                    <div class="post-footer">
+                        <div class="line-beetwen">
+                            <div class="post-tags">
+                                <a href="#" rel="tag">JS</a>
+                                <a href="#" rel="tag">CSS</a>
+                            </div>
+
+                            <div class="social-icons">
+                                <div class="custom-html-widget">
+                                    <ul class="social-icons-menu">
+                                        <li><a href="#" target="_blank">
+                                                <svg class="icon icon--vk">
+                                                    <use href="./icons/symbol/sprite.svg#vk"></use>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li><a href="#" target="_blank">
+                                                <svg class="icon icon--od">
+                                                    <use href="./icons/symbol/sprite.svg#od"></use>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li><a href="#" target="_blank">
+                                                <svg class="icon icon--dzen">
+                                                    <use href="./icons/symbol/sprite.svg#dzen"></use>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li><a href="#" target="_blank">
+                                                <svg class="icon icon--tg">
+                                                    <use href="./icons/symbol/sprite.svg#tg"></use>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="author-box __grid">
+                            <div class="author-box__image ingrid-25">
+                                <img alt="User Image" src="../../images/thumb.png">
+                            </div>
+                            <div class="author-box__info ingrid-75">
+                                <h3 class="author-name">WebLegko</h3>
+                                <p class="author-desc">Улучшения в области написания текстов Gutenberg, инструменты
+                                    дизайна для большей
+                                    согласованности и контроля</p>
+                            </div>
+                        </div>
+
+                        <div class="related-posts">
+                            <h4 class="related-posts__title">Вам также может понравиться</h4>
+
+                            <div class="__grid">
+                                <div class="related-post ingrid-2">
+                                    <div class="related-post__thumbnail">
+                                        <a href="#">
+                                            <div class="ibg "><img src="../../images/post-5.jpg" alt="pic-5"></div>
+                                        </a>
+                                    </div>
+                                    <div class="related-post__details">
+                                        <div class="related-post__details-categories">
+                                            <a href="#">Java</a>,
+                                            <a href="#">Bitrix</a>
+                                        </div>
+                                        <h3 class="related-post__details-title">
+                                            <a href="#">Создание магазина на Bitrix.</a>
+                                        </h3>
+                                        <div class="related-post__details-info">
+                                            <span class="post-date">
+                                                <i class="fa fa-calendar"></i>
+                                                <a href="#">Март 13, 2021</a>
+                                            </span>
+                                            <span class="post-comments">
+                                                <i class="fa fa-comments-o"></i>
+                                                <a href="#" class="comment-url">0</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="related-post ingrid-2">
+                                    <div class="related-post__thumbnail">
+                                        <a href="#">
+                                            <div class="ibg"><img src="../../images/post-8.jpg" alt="pic-8"> </div>
+                                        </a>
+                                    </div>
+                                    <div class="related-post__details">
+                                        <div class="related-post__details-categories">
+                                            <a href="#">HTML5</a>,
+                                            <a href="#">Jquery</a>
+                                        </div>
+                                        <h3 class="related-post__details-title">
+                                            <a href="#">Основы JQuery библиотеки.</a>
+                                        </h3>
+                                        <div class="related-post__details-info">
+                                            <span class="post-date">
+                                                <i class="fa fa-calendar"></i>
+                                                <a href="#">Декабрь 28, 2021</a>
+                                            </span>
+                                            <span class="post-comments">
+                                                <i class="fa fa-comments-o"></i>
+                                                <a href="#" class="comment-url">0</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+<!------------------------------------------ Комментарии ------------------------------------------------------------- -->
+                        <div class="comments">
+                            <h3 class="comments-count">3 Комментария</h3>
+                            <ul class="comments-list">
+
+                                <!-- родительский комментарий -->
+                                <li class="comment even depth-1 parent">
+                                    <div class="comment-body">
+                                        <div class="comment-body__author">
+                                            <img alt=""
+                                             src="https://secure.gravatar.com/avatar/b26407fdbb151a3a44fceda692c92874?s=64&amp;d=mm&amp;r=g">
+
+                                            <cite class="fn">Иван Болван</cite>
+                                        </div>
+
+                                        <div class="comment-body__meta">
+                                            <a href="#">Апрель 15, 2021 в 9:42</a>
+                                        </div>
+
+                                        <p>Пукни весело в штанишки чтоб гавнишко потекло, и тогда мой милый друже
+                                            будет весело вдвойне, вот такая вот рыбешка чтоб не скучно было всем.</p>
+
+                                        <div class="comment-body__reply">
+                                            <a class="comment-body__reply-link" href="#">Ответить</a>
+                                        </div>
+                                    </div>
+
+                                    <!----------- вложенный комментарий -------------->
+                                    <ul class="children">
+                                        <li class="comment odd depth-2">
+                                            <div class="comment-body">
+                                                <div class="comment-body__author">
+                                                    <img alt=""
+                                                        src="https://secure.gravatar.com/avatar/b26407fdbb151a3a44fceda692c92874?s=64&amp;d=mm&amp;r=g">
+                                                    <cite class="fn">
+                                                        <a href="#">WebLegko</a>
+                                                    </cite>
+                                                </div>
+
+                                                <div class="comment-body__meta">
+                                                    <a href="#">Апрель 15, 2021 в 9:49</a>
+                                                </div>
+
+                                                <p>Пукни весело в штанишки чтоб гавнишко потекло, и тогда мой милый
+                                                    друже
+                                                    будет весело вдвойне, вот такая вот рыбешка чтоб не скучно было
+                                                    всем.</p>
+
+                                                <div class="comment-body__reply">
+                                                    <a class="comment-body__reply-link" href="#">Ответить</a>
+                                                </div>
+                                            </div>
+                                            
+                                        </li><!-- #comment-## -->
+                                    </ul><!-- .children -->
+                                </li><!-- #comment-## -->
+
+                                <li class="comment even depth-1">
+                                    <div class="comment-body">
+                                        <div class="comment-body__author">
+                                            <img alt="" src="https://secure.gravatar.com/avatar/041421b18d59ee2a934a75fef9c7aaa9?s=64&amp;d=mm&amp;r=g">
+
+                                            <cite class="fn">Федот Идиот</cite>
+                                        </div>
+
+                                        <div class="comment-body__meta">
+                                            <a href="#">Апрель 13, 2021 в 9:43</a>
+                                        </div>
+
+                                        <p>Пукни весело в штанишки чтоб гавнишко потекло, и тогда мой милый друже
+                                            будет весело вдвойне, вот такая вот рыбешка чтоб не скучно было всем.</p>
+
+                                        <div class="comment-body__reply">
+                                            <a class="comment-body__reply-link" href="#">Ответить</a>
+                                        </div>
+
+                                    </div>
+                                </li><!-- #comment-## -->
+
+                            </ul>
+
+ <!--------------------------------------------------- форма оставить комментарий ------------------------------------------------>
+                            <div id="respond" class="comment-respond">
+                                <h3 class="comment-reply-title">Оставить комментарий
+                                    <small>
+                                        <a href="#" style="display:none;">Отменить ответ</a>
+                                    </small>
+                                </h3>
+                                <form action="" method="post" id="comment-form" class="comment-form">
+                                    <div class="__grid">
+                                        <div class="ingrid-1">
+                                            <div class="message">
+                                                <textarea name="" id="" placeholder="Комментарий*"></textarea>
+                                                <span class="message-error">Введите хоть какой-то сообщение чтоб отправить !</span>    <!-- add class .active-->
+                                                <span class="message-success">Отлично !</span>                  <!-- add class .active-->
+                                            </div>
+                                        </div>                                  
+
+                                 
+                                        <div class="ingrid-2">
+                                            <div class="name">
+                                                <input type="text" placeholder="Имя*">
+                                                <span class="name-error">Введите корректное имя !</span>    <!-- add class .active-->
+                                                <span class="name-success">Отлично !</span>                  <!-- add class .active-->
+                                            </div>
+                                        </div>
+                                        <div class="ingrid-2">
+                                            <div class="email">
+                                                <input type="text" placeholder="Почта*">               <!-- add class .active-->
+                                                <span class="email-error">Введите корректную почту !</span> <!-- add class .active-->
+                                                <span class="email-success">Отлично !</span>
+                                            </div>
+                                        </div>
+                                        <div class="ingrid-1">
+                                            <input type="text" id="url" name="url" placeholder="Ваш сайт">
+                                        </div>
+                                    </div>
+
+                                    <p class="comment-form-cookies-consent">
+                                        <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
+                                            type="checkbox" value="yes" class="checkbox-custom">
+                                        <label for="wp-comment-cookies-consent">
+                                            Сохранить ваше имя, адрес электронной почты и веб-сайт в этом браузере,
+                                            чтобы я мог оставить комментарий в следующий раз.
+                                        </label>
+                                    </p>
+                                    <p class="form-submit">
+                                        <input name="submit" type="submit" id="submit" class="submit btn-default"
+                                            value="Опубликовать">
+                                        <input type="hidden" name="comment_post_ID" value="251" id="comment_post_ID">
+                                        <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                                    </p>
+
+                                    <div class="comment-form-error active">                                      <!-- add class .active-->
+                                        <strong>Вы не удосужились правильно заполнить форму и пытаетесь ее
+                                            отправить,
+                                            Сударь !</strong>
+                                    </div>
+                                </form>
+                            </div><!-- #respond -->
+                        </div>
+
+
+
+                    </div> <!--------- Кнопка наверх ---------->
+                    <div class="go-top"></div>
+                </div>
+
+            </div> <!-- end container-fluid__right -->
+
+        </div> <!-- end container-fluid -->
+</main>

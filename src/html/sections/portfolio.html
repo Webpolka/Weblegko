@@ -1,0 +1,181 @@
+<main class="page">
+    <div class="container-fluid">
+
+        <!------------------------------------------ Верхняя полоса левой попловины сайта с менюшкой ----------------------------------------->
+        <div class="container-fluid__left">
+            <div class="header-line-left">
+                <div class="logo">
+                    <a href="#">
+                        <h2><span class="red">Web</span><span class="white">Legko</span></h2>
+                    </a>
+                </div>
+
+                <div id="menu-buttons" class="menu-buttons">
+                    <button data-id="1" class="menu-buttons__search">
+                        <svg class="icon icon--search">
+                            <use href="./icons/symbol/sprite.svg#search"></use>
+                        </svg>
+                    </button>
+
+                    <button data-id="2" class="menu-buttons__burger">
+                        <div class="burger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <!----------- Окно левой половины сайта для отображения содержимого ---------------->
+            <div class="window-left">
+
+                <div id="menu-tabs" class="menu-tabs">
+
+                    <!---------- Окно с формой поиска ------------>
+                    <div data-id="1" class="menu-tabs__search">
+                        <div class="search-tab-field">
+                            <input type="text" placeholder="Найти..." class="search">
+                            <button id="search-tab-submit" class="search-tab-field__submit" type="submit">
+                                <svg class="icon icon--down">
+                                    <use href="./icons/symbol/sprite.svg#down"></use>
+                                </svg>
+                            </button>
+                            <button id="search-tab-close" class="search-tab-field__close">
+                                <svg class="icon icon--xmark">
+                                    <use href="./icons/symbol/sprite.svg#xmark"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!---------- Окно с менюшкой ------------>
+                    <div data-id="2" class="menu-tabs__burger">
+                        <nav class="slide-down">
+                            <ul>
+                                <li><a href="#">На главную</a></li>
+                                <li><a href="#">Блог</a></li>
+                                <li><a href="#">Наши работы</a></li>
+                                <li><a href="#">О нас</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!---------- Окно со слайдером когда кнопки не активны ------------>
+                    <div class="content-tab">
+
+                        <div class="slide-inner__underlay">
+                            <img src="../../images/portfolio.png" alt="post-1">
+                        </div>
+
+                        <div class="slide-inner__content">
+                            <div class="home-page-box">
+                                <!-- <h3 class="post-title">
+                                    <b>Javascript Wordpress SASS HTML5</b>
+                                </h3> -->
+
+                                <!-- <div class="post-content">
+                                    <p>Все наши работы получили знак качества !
+                                    </p>
+                                </div> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div> <!-- end menu-tabs -->
+        </div> <!-- end window-for-tabs -->
+    </div> <!-- end container-fluid__left -->
+
+    <!-- ---------------------------------------------- Правая сторона сайта -------------------------------------------------------------->
+    <div class="container-fluid__right">
+        <div class="header-line-right">
+            <button id="mode-switcher"></button>
+        </div>
+        <!-- ---------------------- Правое окно для контента -------------------------->
+        <div class="window-right">
+            <h3 class="once-title">Наши работы</h3>
+
+            <div class="window-right__posts __grid">
+                <!-- ------------------ 1 ------------------ -->
+                <div class="ingrid-2">
+                    <div class="post-thumbnail">
+                        <a href="#">
+                            <div class="ibg"><img src="../../images/poddoni.png" alt="pic-1"></div>
+                        </a>
+                    </div>
+
+                    <div class="post-details">
+                        <ul class="post-passive-categories">
+                            <li><b href="#">Wordpress</b></li>
+                            <li><b href="#">HTML</b></li>
+                          </ul>
+                        <h3 class="post-title">
+                            <a href="#">Poddoni.ru</a>
+                        </h3>
+                        <p class="post-content">Landing page по продаже поддонов …</p>
+                    </div>
+                </div>
+
+                <!-- ------------------ 2 ------------------ -->
+                <div class="ingrid-2">
+                    <div class="post-thumbnail">
+                        <a href="#">
+                            <div class="ibg"><img src="../../images/tourist.png" alt="pic-3"></div>
+                        </a>
+                    </div>
+
+                    <div class="post-details">
+                        <ul class="post-passive-categories">
+                            <li><b href="#">Wordpress</b></li>
+                            <li><b href="#">HTML</b></li>
+                          </ul>
+                        <h3 class="post-title">
+                            <a href="#">Tourist.ru</a>
+                        </h3>
+                        <p class="post-content">Landing page турристической фирмы …</p>
+                    </div>
+                </div>
+
+                <!-- ------------------ 2 ------------------ -->
+                <div class="ingrid-2">
+                    <div class="post-thumbnail">
+                        <a href="#">
+                            <div class="ibg"><img src="../../images/zamki.png" alt="pic-3"></div>
+                        </a>
+                    </div>
+
+                    <div class="post-details">
+                        <ul class="post-passive-categories">
+                            <li><b href="#">Wordpress</b></li>
+                            <li><b href="#">HTML</b></li>
+                          </ul>
+                        <h3 class="post-title">
+                            <a href="#">Magazine-Zamki.ru</a>
+                        </h3>
+                        <p class="post-content">Интернет магазин по продаже дверных замков…</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!--------- Пагинация ---------->
+            <div class="window-right__pagination">
+                <div class="pagination-numbers">
+                    <span aria-current="page" class="page-numbers current">1</span>
+                    <a class="page-numbers" href="#">2</a>
+                    <a class="page-numbers" href="#">3</a>
+                    <a class="next page-numbers" href="#"><span class="fa fa-angle-right"></span></a>
+                </div>
+            </div>
+
+            <!--------- Кнопка наверх ---------->
+            <div class="go-top"></div>
+        </div>
+
+    </div> <!-- end container-fluid__right -->
+
+    </div> <!-- end container-fluid -->
+</main>
