@@ -23,7 +23,7 @@
             background-color: var(--color-before);
         }
     }
-
+    // -------------------------------------------------------------------------------------------------------------------
     // --------------------------------------------- Список комментариев --------------------------------------------------
     &-list {
         ul.children {
@@ -159,7 +159,7 @@
                 min-height: rem(200);
                 resize: vertical;
                 border-radius: rem(8);
-                padding: rem(12 rem(15));
+                padding: rem(12) rem(15);
                 margin-bottom: rem(30);
                 width: 100%;
                 line-height: normal;
@@ -179,7 +179,7 @@
                 font-family: inherit;
                 font-size: inherit;
                 line-height: inherit;
-                padding: rem(12 rem(15));
+                padding: rem(12) rem(15);
                 margin-bottom: rem(30);
                 width: 100%;
                 line-height: normal;
